@@ -107,6 +107,26 @@ export function SendIcon(props: IconProps) {
   );
 }
 
+/** Quadro de colunas do CRM. */
+export function BoardIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <rect x="3" y="4" width="5" height="16" rx="1.5" />
+      <rect x="9.5" y="4" width="5" height="10" rx="1.5" />
+      <rect x="16" y="4" width="5" height="13" rx="1.5" />
+    </Icon>
+  );
+}
+
+export function ChatIcon(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M4 5h16v11H9l-5 4z" />
+      <path d="M8 9.5h8M8 12.5h5" />
+    </Icon>
+  );
+}
+
 export function BellIcon(props: IconProps) {
   return (
     <Icon {...props}>

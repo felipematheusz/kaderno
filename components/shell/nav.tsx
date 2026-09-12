@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import {
   BellIcon,
+  BoardIcon,
   CalendarIcon,
   ChartIcon,
+  ChatIcon,
   ClockIcon,
   ContractIcon,
   HomeIcon,
@@ -26,6 +28,8 @@ export type NavItem = {
 
 const inicio: NavItem = { href: "/", label: "Início", icon: <HomeIcon /> };
 const clientes: NavItem = { href: "/clientes", label: "Clientes", icon: <UsersIcon /> };
+const crm: NavItem = { href: "/crm", label: "CRM", icon: <BoardIcon /> };
+const conversas: NavItem = { href: "/conversas", label: "Conversas", icon: <ChatIcon /> };
 const contratos: NavItem = { href: "/contratos", label: "Contratos", icon: <ContractIcon /> };
 const parcelas: NavItem = { href: "/parcelas", label: "Parcelas", icon: <ReceiptIcon />, showOverdue: true };
 const calendario: NavItem = { href: "/calendario", label: "Calendário", icon: <CalendarIcon /> };
@@ -38,7 +42,17 @@ const suporte: NavItem = { href: "/suporte", label: "Suporte", icon: <SendIcon /
 const perfil: NavItem = { href: "/perfil", label: "Perfil e conta", icon: <UserIcon /> };
 
 /** Menu lateral (desktop), bloco de cima. */
-export const mainNav: readonly NavItem[] = [inicio, clientes, contratos, parcelas, calendario, relatorios, historico];
+export const mainNav: readonly NavItem[] = [
+  inicio,
+  clientes,
+  crm,
+  conversas,
+  contratos,
+  parcelas,
+  calendario,
+  relatorios,
+  historico,
+];
 
 /** Menu lateral (desktop), bloco de baixo. */
 export const secondaryNav: readonly NavItem[] = [ajustes, suporte];
@@ -48,6 +62,8 @@ export const mobileNav: readonly NavItem[] = [inicio, clientes, contratos, parce
 
 /** O que abre no "Mais" do celular. */
 export const moreNav: readonly NavItem[] = [
+  crm,
+  conversas,
   calendario,
   relatorios,
   historico,
