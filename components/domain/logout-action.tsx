@@ -1,17 +1,13 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ConfirmDialog } from "@/components/ui/confirm-dialog";
+import { sair } from "@/lib/login";
 
-/**
- * Sair da conta, com confirmação.
- * Enquanto o login de verdade não existe, sair só devolve a pessoa ao início.
- */
+/** Sair da conta, com confirmação. Encerra a sessão deste aparelho e volta para a tela de entrar. */
 export function LogoutAction() {
   const [aberto, setAberto] = useState(false);
-  const router = useRouter();
 
   return (
     <>
@@ -25,10 +21,7 @@ export function LogoutAction() {
         description="Seus clientes, contratos e parcelas continuam guardados. Para voltar, é só entrar de novo."
         confirmLabel="Sair"
         pendingLabel="Saindo…"
-        onConfirm={() => {
-          router.push("/");
-          router.refresh();
-        }}
+        onConfirm={() => sair()}
       />
     </>
   );

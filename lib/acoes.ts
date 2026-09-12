@@ -2,28 +2,18 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import type { Frequencia, JurosSobre } from "./contrato";
-import {
-  alterarSenha,
-  atualizarAvisos,
-  atualizarCliente,
-  atualizarContrato,
-  atualizarPerfil,
-  criarCliente,
-  criarContrato,
-  excluirCliente,
-  excluirContrato,
-  receberParcela,
-  renegociarParcela,
-  type Avisos,
-  type CanalRecebimento,
-  type FormaRecebimento,
-} from "./dados";
-import { onlyDigits } from "./format";
+import { FREQUENCIAS } from "./contrato";
+import { cadastrarCliente, editarCliente, excluirCliente } from "./operacoes/clientes";
+import { criarContrato, editarContrato, excluirContrato } from "./operacoes/contratos";
+import { receberParcela, renegociarParcela } from "./operacoes/parcelas";
+import { atualizarAvisos, atualizarPerfil } from "./operacoes/perfil";
+import type { Avisos } from "./operacoes/visoes";
+import { emailDoLogin, gravar } from "./sessao";
+import { supabaseServidor } from "./supabase/servidor";
 
 /*
- * O que os formulários chamam. Cada ação valida, grava e manda a tela seguinte.
- * Erro de preenchimento volta como texto no campo; nada é gravado pela metade.
+ * O que os formulários chamam. Cada ação só traduz o formulário para a operação
+ * (lib/operacoes), que valida e grava tudo ou nada. Erro de preenchimento volta como texto no campo.
  */
 
 export type EstadoForm = {
@@ -42,15 +32,19 @@ function opcional(dados: FormData, campo: string): string | undefined {
   return valor === "" ? undefined : valor;
 }
 
-function numero(dados: FormData, campo: string): number | null {
+/** Número digitado ("1.234,56" já chega como "1234.56" dos campos de dinheiro). Vazio é ausente. */
+function numero(dados: FormData, campo: string): number | undefined {
   const valor = texto(dados, campo);
-  if (valor === "") return null;
+  if (valor === "") return undefined;
   const convertido = Number(valor.replace(",", "."));
-  return Number.isFinite(convertido) ? convertido : null;
+  return Number.isFinite(convertido) ? convertido : Number.NaN;
 }
 
-const DATA = /^\d{4}-\d{2}-\d{2}$/;
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+/** Só aceita um dos valores conhecidos; o resto vira ausente e a operação usa o padrão. */
+function escolha<T extends string>(dados: FormData, campo: string, opcoes: readonly T[]): T | undefined {
+  const valor = texto(dados, campo);
+  return opcoes.find((opcao) => opcao === valor);
+}
 
 function revalidarTudo(): void {
   // Cliente, contrato e parcela aparecem em quase toda tela: o jeito seguro é revalidar o layout.
@@ -59,19 +53,32 @@ function revalidarTudo(): void {
 
 /* ── Perfil e conta ─────────────────────────────────────────────────── */
 
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
 export async function salvarPerfil(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
-  const nome = texto(dados, "nome");
   const email = texto(dados, "email");
-  const erros: Record<string, string> = {};
+  if (!EMAIL.test(email)) return { erros: { email: "Escreva um e-mail inteiro, como voce@exemplo.com." } };
 
-  if (nome.length < 2) erros.nome = "Escreva seu nome.";
-  if (!EMAIL.test(email)) erros.email = "Escreva um e-mail inteiro, como voce@exemplo.com.";
-  if (Object.keys(erros).length > 0) return { erros };
-
-  atualizarPerfil({ nome, email, telefone: opcional(dados, "telefone") });
-  // O nome aparece no menu de toda tela.
+  const resultado = await gravar(atualizarPerfil, { nome: texto(dados, "nome"), telefone: opcional(dados, "telefone") });
+  if (!resultado.ok) return { erros: resultado.erros };
   revalidarTudo();
-  return { sucesso: "Dados salvos." };
+
+  if (email === (await emailDoLogin())) return { sucesso: "Dados salvos." };
+
+  // O e-mail é o login: só troca depois que a pessoa confirma pelo link enviado ao endereço novo.
+  const supabase = await supabaseServidor();
+  const { error } = await supabase.auth.updateUser({ email });
+  if (error) {
+    return {
+      erros: {
+        email:
+          error.code === "email_exists"
+            ? "Esse e-mail já é usado em outra conta."
+            : "Não deu para trocar o e-mail agora. Tente de novo em alguns minutos.",
+      },
+    };
+  }
+  return { sucesso: "Dados salvos. Para trocar o e-mail, abra o link que mandamos para o endereço novo." };
 }
 
 export async function trocarSenhaAcao(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
@@ -86,13 +93,30 @@ export async function trocarSenhaAcao(_estado: EstadoForm, dados: FormData): Pro
   if (nova !== confirmacao) erros.confirmacao = "As duas senhas novas não bateram. Digite de novo.";
   if (Object.keys(erros).length > 0) return { erros };
 
-  if (!alterarSenha(atual, nova)) return { erros: { atual: "Essa não é a sua senha de hoje." } };
+  const email = await emailDoLogin();
+  const supabase = await supabaseServidor();
+  if (!email) return { erros: { atual: "Sua sessão acabou. Entre de novo para trocar a senha." } };
 
+  const conferida = await supabase.auth.signInWithPassword({ email, password: atual });
+  if (conferida.error) return { erros: { atual: "Essa não é a sua senha de hoje." } };
+
+  const { error } = await supabase.auth.updateUser({ password: nova });
+  if (error) {
+    return {
+      erros: {
+        nova:
+          error.code === "weak_password"
+            ? "Senha fraca. Misture letras e números e use 8 caracteres ou mais."
+            : "Não deu para trocar a senha agora. Tente de novo.",
+      },
+    };
+  }
   return { sucesso: "Senha trocada." };
 }
 
 export async function salvarAvisosAcao(avisos: Avisos): Promise<void> {
-  atualizarAvisos(avisos);
+  const resultado = await gravar(atualizarAvisos, avisos);
+  if (!resultado.ok) throw new Error("Não deu para salvar os avisos.");
   revalidatePath("/perfil");
 }
 
@@ -100,32 +124,29 @@ export async function salvarAvisosAcao(avisos: Avisos): Promise<void> {
 
 export async function salvarCliente(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
   const id = texto(dados, "id");
-  const nome = texto(dados, "nome");
-  const cpf = onlyDigits(texto(dados, "cpf"));
-  const score = numero(dados, "score");
-  const erros: Record<string, string> = {};
-
-  if (nome.length < 2) erros.nome = "Escreva o nome do cliente.";
-  if (cpf !== "" && cpf.length !== 11) erros.cpf = "CPF tem 11 dígitos. Confira o que você digitou.";
-  if (score !== null && (score < 0 || score > 100)) erros.score = "O score vai de 0 a 100.";
-  if (Object.keys(erros).length > 0) return { erros };
-
   const cliente = {
-    nome,
-    cpf: cpf === "" ? undefined : cpf,
+    nome: texto(dados, "nome"),
+    apelido: opcional(dados, "apelido"),
+    cpf: opcional(dados, "cpf"),
     telefone: opcional(dados, "telefone"),
     email: opcional(dados, "email"),
     endereco: opcional(dados, "endereco"),
-    score: score ?? undefined,
+    score: numero(dados, "score"),
   };
 
-  const destino = id === "" ? criarCliente(cliente) : (atualizarCliente(id, cliente), id);
+  const resultado =
+    id === ""
+      ? await gravar(cadastrarCliente, cliente, opcional(dados, "chave"))
+      : await gravar(editarCliente, { ...cliente, id });
+  if (!resultado.ok) return { erros: resultado.erros };
+
   revalidarTudo();
-  redirect(`/clientes/${destino}`);
+  redirect(`/clientes/${resultado.dados.id}`);
 }
 
 export async function excluirClienteAcao(id: string): Promise<void> {
-  excluirCliente(id);
+  const resultado = await gravar(excluirCliente, { id });
+  if (!resultado.ok) throw new Error(Object.values(resultado.erros)[0]);
   revalidarTudo();
 }
 
@@ -133,97 +154,77 @@ export async function excluirClienteAcao(id: string): Promise<void> {
 
 export async function salvarContrato(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
   const id = texto(dados, "id");
-  const clienteId = texto(dados, "clienteId");
-  const tipo = texto(dados, "tipo") === "venda" ? "venda" : "emprestimo";
-  const principal = numero(dados, "principal");
-  const parcelas = numero(dados, "parcelas");
-  const taxa = texto(dados, "comJuros") === "sim" ? (numero(dados, "taxa") ?? 0) : 0;
-  const primeiroVencimento = texto(dados, "primeiroVencimento");
-  const produto = opcional(dados, "produto");
-  const erros: Record<string, string> = {};
-
-  if (clienteId === "") erros.clienteId = "Escolha o cliente do contrato.";
-  if (principal === null || principal <= 0) erros.principal = "Diga quanto foi emprestado.";
-  if (parcelas === null || parcelas < 1 || parcelas > 360) erros.parcelas = "De 1 a 360 parcelas.";
-  if (taxa < 0 || taxa > 100) erros.taxa = "A taxa vai de 0 a 100%.";
-  if (!DATA.test(primeiroVencimento)) erros.primeiroVencimento = "Escolha a data da primeira parcela.";
-  if (tipo === "venda" && produto === undefined) erros.produto = "Diga o que foi vendido.";
-  if (Object.keys(erros).length > 0) return { erros };
+  const tipo = escolha(dados, "tipo", ["emprestimo", "venda"] as const) ?? "emprestimo";
+  const venda = tipo === "venda";
 
   const contrato = {
-    clienteId,
-    tipo: tipo as "emprestimo" | "venda",
-    produto,
-    custo: tipo === "venda" ? (numero(dados, "custo") ?? undefined) : undefined,
-    entrada: tipo === "venda" ? (numero(dados, "entrada") ?? undefined) : undefined,
-    principal: principal as number,
-    taxa,
-    jurosSobre: (texto(dados, "jurosSobre") === "parcela" ? "parcela" : "total") as JurosSobre,
-    frequencia: texto(dados, "frequencia") as Frequencia,
+    clienteId: texto(dados, "clienteId"),
+    tipo,
+    produto: venda ? opcional(dados, "produto") : undefined,
+    custo: venda ? numero(dados, "custo") : undefined,
+    entrada: venda ? numero(dados, "entrada") : undefined,
+    principal: numero(dados, "principal"),
+    taxa: texto(dados, "comJuros") === "sim" ? (numero(dados, "taxa") ?? 0) : 0,
+    jurosSobre: escolha(dados, "jurosSobre", ["parcela", "total"] as const),
+    frequencia: escolha(
+      dados,
+      "frequencia",
+      FREQUENCIAS.map((f) => f.value),
+    ),
+    parcelas: numero(dados, "parcelas"),
+    primeiroVencimento: texto(dados, "primeiroVencimento"),
     jurosEmAtraso: dados.get("jurosEmAtraso") !== null,
     observacao: opcional(dados, "observacao"),
-    parcelas: parcelas as number,
-    primeiroVencimento,
   };
 
   if (id !== "") {
-    atualizarContrato(id, contrato);
+    const resultado = await gravar(editarContrato, { ...contrato, id });
+    if (!resultado.ok) return { erros: resultado.erros };
     revalidarTudo();
     redirect(`/contratos/${id}`);
   }
 
-  const novo = criarContrato(contrato);
+  const resultado = await gravar(criarContrato, contrato, opcional(dados, "chave"));
+  if (!resultado.ok) return { erros: resultado.erros };
   revalidarTudo();
-  redirect(`/contratos/sucesso?contrato=${novo}`);
+  redirect(`/contratos/sucesso?contrato=${resultado.dados.id}`);
 }
 
 export async function excluirContratoAcao(id: string): Promise<void> {
-  excluirContrato(id);
+  const resultado = await gravar(excluirContrato, { id });
+  if (!resultado.ok) throw new Error(Object.values(resultado.erros)[0]);
   revalidarTudo();
 }
 
 /* ── Parcela ────────────────────────────────────────────────────────── */
 
 export async function receberParcelaAcao(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
-  const id = texto(dados, "parcelaId");
-  const valor = numero(dados, "valor");
-  const data = texto(dados, "data");
-  const erros: Record<string, string> = {};
-
-  if (valor === null || valor <= 0) erros.valor = "Diga quanto você recebeu.";
-  if (!DATA.test(data)) erros.data = "Escolha o dia do recebimento.";
-  if (Object.keys(erros).length > 0) return { erros };
-
-  const recibo = receberParcela(id, {
-    valor: valor as number,
-    forma: texto(dados, "forma") as FormaRecebimento,
-    canal: texto(dados, "canal") as CanalRecebimento,
-    data,
-  });
-
-  if (recibo === undefined) return { erros: { valor: "Essa parcela não existe mais. Volte e abra de novo." } };
+  const resultado = await gravar(
+    receberParcela,
+    {
+      parcelaId: texto(dados, "parcelaId"),
+      valor: numero(dados, "valor"),
+      forma: escolha(dados, "forma", ["parcela", "juros", "parcial", "quitacao"] as const),
+      canal: escolha(dados, "canal", ["pix", "dinheiro", "transferencia", "cartao"] as const),
+      data: texto(dados, "data"),
+    },
+    opcional(dados, "chave"),
+  );
+  if (!resultado.ok) return { erros: resultado.erros };
 
   revalidarTudo();
-  redirect(`/recebido?recibo=${recibo}`);
+  redirect(`/recebido?recibo=${resultado.dados.reciboId}`);
 }
 
 export async function renegociarParcelaAcao(_estado: EstadoForm, dados: FormData): Promise<EstadoForm> {
-  const id = texto(dados, "parcelaId");
-  const contratoId = texto(dados, "contratoId");
-  const valor = numero(dados, "valor");
-  const vencimento = texto(dados, "vencimento");
-  const erros: Record<string, string> = {};
-
-  if (valor === null || valor <= 0) erros.valor = "Diga o novo valor da parcela.";
-  if (!DATA.test(vencimento)) erros.vencimento = "Escolha a nova data de vencimento.";
-  if (Object.keys(erros).length > 0) return { erros };
-
-  renegociarParcela(id, {
-    valor: valor as number,
-    vencimento,
+  const resultado = await gravar(renegociarParcela, {
+    parcelaId: texto(dados, "parcelaId"),
+    valor: numero(dados, "valor"),
+    vencimento: texto(dados, "vencimento"),
     observacao: opcional(dados, "observacao"),
   });
+  if (!resultado.ok) return { erros: resultado.erros };
 
   revalidarTudo();
-  redirect(`/contratos/${contratoId}`);
+  redirect(`/contratos/${resultado.dados.contratoId}`);
 }

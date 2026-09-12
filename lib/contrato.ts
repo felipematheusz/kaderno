@@ -52,6 +52,18 @@ export type Simulacao = {
   lucro: number;
 };
 
+/** 42 → "#0042". O banco guarda o número; a tela e as mensagens mostram assim. */
+export function rotuloNumeroContrato(numero: number): string {
+  return `#${String(numero).padStart(4, "0")}`;
+}
+
+/** "#0042", "0042" ou "42" → 42. Referência que uma pessoa (ou a IA) escreveria. */
+export function lerNumeroContrato(referencia: string): number | undefined {
+  const digitos = referencia.trim().replace(/^#/, "");
+  if (!/^\d{1,9}$/.test(digitos)) return undefined;
+  return Number(digitos);
+}
+
 /** Centavos redondos: dinheiro não pode acumular sobra de ponto flutuante. */
 export function arredondar(valor: number): number {
   return Math.round(valor * 100) / 100;

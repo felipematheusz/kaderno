@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789244559434,
+      "tag": "0000_funcoes_de_contexto",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789244574402,
+      "tag": "0001_tabelas",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789244586012,
+      "tag": "0002_permissoes_e_cadastro",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789245471508,
+      "tag": "0003_indices_de_chaves",
+      "breakpoints": true
+    }
+  ]
+}

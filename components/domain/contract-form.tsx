@@ -14,6 +14,7 @@ import { salvarContrato, type EstadoForm } from "@/lib/acoes";
 import { FREQUENCIAS, simular, type Frequencia, type JurosSobre } from "@/lib/contrato";
 import type { Contrato } from "@/lib/dados";
 import { formatBRL, somarDias } from "@/lib/format";
+import { marcarEnvio } from "@/lib/envio";
 
 export type ContractFormProps = {
   clientes: readonly ClientOption[];
@@ -55,9 +56,10 @@ export function ContractForm({ clientes, tipo, contrato, clienteInicial, hoje, v
   const jaPagas = contrato ? contrato.pagas : 0;
 
   return (
-    <form action={acao} className="flex flex-col gap-5">
+    <form action={acao} onSubmit={marcarEnvio} className="flex flex-col gap-5">
       <input type="hidden" name="id" value={contrato?.id ?? ""} />
       <input type="hidden" name="tipo" value={tipo} />
+      <input type="hidden" name="chave" />
 
       <Card variant="outlined" className="grid gap-5 md:grid-cols-2">
         <ClientSearch

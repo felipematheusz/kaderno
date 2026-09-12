@@ -1,0 +1,1216 @@
+{
+  "id": "0e58ee1f-d575-4e08-abde-13ffcaa9397b",
+  "prevId": "232bfabf-975c-4200-8c85-fa30c4ba60fa",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.clientes": {
+      "name": "clientes",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apelido": {
+          "name": "apelido",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cpf": {
+          "name": "cpf",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "telefone": {
+          "name": "telefone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "endereco": {
+          "name": "endereco",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "score": {
+          "name": "score",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "desde": {
+          "name": "desde",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "current_date"
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "clientes_conta_id_nome_index": {
+          "name": "clientes_conta_id_nome_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "nome",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "clientes_conta_id_contas_id_fk": {
+          "name": "clientes_conta_id_contas_id_fk",
+          "tableFrom": "clientes",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "clientes_contaId_id_unique": {
+          "name": "clientes_contaId_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "conta_id",
+            "id"
+          ]
+        }
+      },
+      "policies": {
+        "clientes: só a conta atual": {
+          "name": "clientes: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "clientes_score": {
+          "name": "clientes_score",
+          "value": "\"clientes\".\"score\" between 0 and 100"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.contas": {
+      "name": "contas",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "proximo_numero_contrato": {
+          "name": "proximo_numero_contrato",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "criada_em": {
+          "name": "criada_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {
+        "contas: só a conta atual": {
+          "name": "contas: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "id = privado.conta_atual()",
+          "withCheck": "id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.contratos": {
+      "name": "contratos",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "numero": {
+          "name": "numero",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cliente_id": {
+          "name": "cliente_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "produto": {
+          "name": "produto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "custo": {
+          "name": "custo",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "entrada": {
+          "name": "entrada",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "principal": {
+          "name": "principal",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "taxa": {
+          "name": "taxa",
+          "type": "numeric(7, 4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "juros_sobre": {
+          "name": "juros_sobre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "frequencia": {
+          "name": "frequencia",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "juros_em_atraso": {
+          "name": "juros_em_atraso",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "observacao": {
+          "name": "observacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "current_date"
+        },
+        "repassado_em": {
+          "name": "repassado_em",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "canal_repasse": {
+          "name": "canal_repasse",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "contratos_conta_id_cliente_id_index": {
+          "name": "contratos_conta_id_cliente_id_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "cliente_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "contratos_conta_id_contas_id_fk": {
+          "name": "contratos_conta_id_contas_id_fk",
+          "tableFrom": "contratos",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "contratos_conta_id_cliente_id_clientes_conta_id_id_fk": {
+          "name": "contratos_conta_id_cliente_id_clientes_conta_id_id_fk",
+          "tableFrom": "contratos",
+          "tableTo": "clientes",
+          "columnsFrom": [
+            "conta_id",
+            "cliente_id"
+          ],
+          "columnsTo": [
+            "conta_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "contratos_contaId_id_unique": {
+          "name": "contratos_contaId_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "conta_id",
+            "id"
+          ]
+        },
+        "contratos_contaId_numero_unique": {
+          "name": "contratos_contaId_numero_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "conta_id",
+            "numero"
+          ]
+        }
+      },
+      "policies": {
+        "contratos: só a conta atual": {
+          "name": "contratos: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "contratos_tipo": {
+          "name": "contratos_tipo",
+          "value": "\"contratos\".\"tipo\" in ('emprestimo', 'venda')"
+        },
+        "contratos_juros_sobre": {
+          "name": "contratos_juros_sobre",
+          "value": "\"contratos\".\"juros_sobre\" in ('parcela', 'total')"
+        },
+        "contratos_frequencia": {
+          "name": "contratos_frequencia",
+          "value": "\"contratos\".\"frequencia\" in ('diaria', 'semanal', 'quinzenal', 'mensal')"
+        },
+        "contratos_canal_repasse": {
+          "name": "contratos_canal_repasse",
+          "value": "\"contratos\".\"canal_repasse\" in ('pix', 'dinheiro', 'transferencia', 'cartao')"
+        },
+        "contratos_valores": {
+          "name": "contratos_valores",
+          "value": "\"contratos\".\"principal\" > 0 and \"contratos\".\"taxa\" between 0 and 100"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.eventos": {
+      "name": "eventos",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigint",
+          "primaryKey": true,
+          "notNull": true,
+          "identity": {
+            "type": "always",
+            "name": "eventos_id_seq",
+            "schema": "public",
+            "increment": "1",
+            "startWith": "1",
+            "minValue": "1",
+            "maxValue": "9223372036854775807",
+            "cache": "1",
+            "cycle": false
+          }
+        },
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "usuario_id": {
+          "name": "usuario_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "origem": {
+          "name": "origem",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "operacao": {
+          "name": "operacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "entrada": {
+          "name": "entrada",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "resultado": {
+          "name": "resultado",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "eventos_conta_id_criado_em_index": {
+          "name": "eventos_conta_id_criado_em_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "criado_em",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "eventos_usuario_id_index": {
+          "name": "eventos_usuario_id_index",
+          "columns": [
+            {
+              "expression": "usuario_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "eventos_conta_id_contas_id_fk": {
+          "name": "eventos_conta_id_contas_id_fk",
+          "tableFrom": "eventos",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "eventos_usuario_id_usuarios_id_fk": {
+          "name": "eventos_usuario_id_usuarios_id_fk",
+          "tableFrom": "eventos",
+          "tableTo": "usuarios",
+          "columnsFrom": [
+            "usuario_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {
+        "eventos: só a conta atual": {
+          "name": "eventos: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "eventos_origem": {
+          "name": "eventos_origem",
+          "value": "\"eventos\".\"origem\" in ('web', 'whatsapp', 'ia', 'sistema')"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.idempotencia": {
+      "name": "idempotencia",
+      "schema": "",
+      "columns": {
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chave": {
+          "name": "chave",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "operacao": {
+          "name": "operacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "resultado": {
+          "name": "resultado",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "idempotencia_conta_id_contas_id_fk": {
+          "name": "idempotencia_conta_id_contas_id_fk",
+          "tableFrom": "idempotencia",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "idempotencia_conta_id_chave_pk": {
+          "name": "idempotencia_conta_id_chave_pk",
+          "columns": [
+            "conta_id",
+            "chave"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {
+        "idempotencia: só a conta atual": {
+          "name": "idempotencia: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    },
+    "public.membros": {
+      "name": "membros",
+      "schema": "",
+      "columns": {
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "usuario_id": {
+          "name": "usuario_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "papel": {
+          "name": "papel",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "membros_usuario_id_index": {
+          "name": "membros_usuario_id_index",
+          "columns": [
+            {
+              "expression": "usuario_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "membros_conta_id_contas_id_fk": {
+          "name": "membros_conta_id_contas_id_fk",
+          "tableFrom": "membros",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "membros_usuario_id_usuarios_id_fk": {
+          "name": "membros_usuario_id_usuarios_id_fk",
+          "tableFrom": "membros",
+          "tableTo": "usuarios",
+          "columnsFrom": [
+            "usuario_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "membros_conta_id_usuario_id_pk": {
+          "name": "membros_conta_id_usuario_id_pk",
+          "columns": [
+            "conta_id",
+            "usuario_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {
+        "membros: só a conta atual": {
+          "name": "membros: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "membros_papel": {
+          "name": "membros_papel",
+          "value": "\"membros\".\"papel\" in ('dono')"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.parcelas": {
+      "name": "parcelas",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contrato_id": {
+          "name": "contrato_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "numero": {
+          "name": "numero",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vencimento": {
+          "name": "vencimento",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "valor": {
+          "name": "valor",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pago": {
+          "name": "pago",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "pago_em": {
+          "name": "pago_em",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "valor_recebido": {
+          "name": "valor_recebido",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "detalhe": {
+          "name": "detalhe",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "observacao": {
+          "name": "observacao",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "renegociada": {
+          "name": "renegociada",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "recebimento_id": {
+          "name": "recebimento_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "parcelas_conta_id_vencimento_index": {
+          "name": "parcelas_conta_id_vencimento_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "vencimento",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "parcelas_conta_id_recebimento_id_index": {
+          "name": "parcelas_conta_id_recebimento_id_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "recebimento_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "parcelas_conta_id_contas_id_fk": {
+          "name": "parcelas_conta_id_contas_id_fk",
+          "tableFrom": "parcelas",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "parcelas_conta_id_contrato_id_contratos_conta_id_id_fk": {
+          "name": "parcelas_conta_id_contrato_id_contratos_conta_id_id_fk",
+          "tableFrom": "parcelas",
+          "tableTo": "contratos",
+          "columnsFrom": [
+            "conta_id",
+            "contrato_id"
+          ],
+          "columnsTo": [
+            "conta_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "parcelas_conta_id_recebimento_id_recebimentos_conta_id_id_fk": {
+          "name": "parcelas_conta_id_recebimento_id_recebimentos_conta_id_id_fk",
+          "tableFrom": "parcelas",
+          "tableTo": "recebimentos",
+          "columnsFrom": [
+            "conta_id",
+            "recebimento_id"
+          ],
+          "columnsTo": [
+            "conta_id",
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "parcelas_contaId_contratoId_numero_unique": {
+          "name": "parcelas_contaId_contratoId_numero_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "conta_id",
+            "contrato_id",
+            "numero"
+          ]
+        }
+      },
+      "policies": {
+        "parcelas: só a conta atual": {
+          "name": "parcelas: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "parcelas_valor": {
+          "name": "parcelas_valor",
+          "value": "\"parcelas\".\"valor\" >= 0"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.recebimentos": {
+      "name": "recebimentos",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "conta_id": {
+          "name": "conta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contrato_id": {
+          "name": "contrato_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "parcela_numero": {
+          "name": "parcela_numero",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "valor": {
+          "name": "valor",
+          "type": "numeric(12, 2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "forma": {
+          "name": "forma",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "canal": {
+          "name": "canal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "data": {
+          "name": "data",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "recebimentos_conta_id_data_index": {
+          "name": "recebimentos_conta_id_data_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "data",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "recebimentos_conta_id_contrato_id_index": {
+          "name": "recebimentos_conta_id_contrato_id_index",
+          "columns": [
+            {
+              "expression": "conta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "contrato_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "recebimentos_conta_id_contas_id_fk": {
+          "name": "recebimentos_conta_id_contas_id_fk",
+          "tableFrom": "recebimentos",
+          "tableTo": "contas",
+          "columnsFrom": [
+            "conta_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "recebimentos_conta_id_contrato_id_contratos_conta_id_id_fk": {
+          "name": "recebimentos_conta_id_contrato_id_contratos_conta_id_id_fk",
+          "tableFrom": "recebimentos",
+          "tableTo": "contratos",
+          "columnsFrom": [
+            "conta_id",
+            "contrato_id"
+          ],
+          "columnsTo": [
+            "conta_id",
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "recebimentos_contaId_id_unique": {
+          "name": "recebimentos_contaId_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "conta_id",
+            "id"
+          ]
+        }
+      },
+      "policies": {
+        "recebimentos: só a conta atual": {
+          "name": "recebimentos: só a conta atual",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "conta_id = privado.conta_atual()",
+          "withCheck": "conta_id = privado.conta_atual()"
+        }
+      },
+      "checkConstraints": {
+        "recebimentos_forma": {
+          "name": "recebimentos_forma",
+          "value": "\"recebimentos\".\"forma\" in ('parcela', 'juros', 'parcial', 'quitacao')"
+        },
+        "recebimentos_canal": {
+          "name": "recebimentos_canal",
+          "value": "\"recebimentos\".\"canal\" in ('pix', 'dinheiro', 'transferencia', 'cartao')"
+        },
+        "recebimentos_valor": {
+          "name": "recebimentos_valor",
+          "value": "\"recebimentos\".\"valor\" > 0"
+        }
+      },
+      "isRLSEnabled": true
+    },
+    "public.usuarios": {
+      "name": "usuarios",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "telefone": {
+          "name": "telefone",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "avisos": {
+          "name": "avisos",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'{\"vencimentos\":true,\"atrasos\":true,\"resumo\":false}'::jsonb"
+        },
+        "criado_em": {
+          "name": "criado_em",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {
+        "usuarios: só o próprio usuário": {
+          "name": "usuarios: só o próprio usuário",
+          "as": "PERMISSIVE",
+          "for": "ALL",
+          "to": [
+            "kaderno_app"
+          ],
+          "using": "id = privado.usuario_atual()",
+          "withCheck": "id = privado.usuario_atual()"
+        }
+      },
+      "checkConstraints": {},
+      "isRLSEnabled": true
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {
+    "kaderno_app": {
+      "name": "kaderno_app",
+      "createDb": false,
+      "createRole": false,
+      "inherit": true
+    }
+  },
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

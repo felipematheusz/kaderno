@@ -11,6 +11,7 @@ import { Select } from "@/components/ui/select";
 import { receberParcelaAcao, type EstadoForm } from "@/lib/acoes";
 import { arredondar } from "@/lib/contrato";
 import type { Contrato, FormaRecebimento, Parcela } from "@/lib/dados";
+import { marcarEnvio } from "@/lib/envio";
 import { formatBRL } from "@/lib/format";
 
 export type ReceiveFormProps = {
@@ -64,8 +65,9 @@ export function ReceiveForm({ parcela, contrato, hoje, voltarPara }: ReceiveForm
   const [valor, setValor] = useState<number | null>(parcela.valor);
 
   return (
-    <form action={acao} className="flex flex-col gap-5">
+    <form action={acao} onSubmit={marcarEnvio} className="flex flex-col gap-5">
       <input type="hidden" name="parcelaId" value={parcela.id} />
+      <input type="hidden" name="chave" />
 
       <Card variant="outlined" className="grid gap-5 md:grid-cols-2">
         <RadioCardGroup label="Como o cliente pagou?" className="md:col-span-2">

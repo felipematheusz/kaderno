@@ -1,0 +1,2 @@
+CREATE INDEX "parcelas_conta_id_recebimento_id_index" ON "parcelas" USING btree ("conta_id","recebimento_id");--> statement-breakpoint
+CREATE INDEX "recebimentos_conta_id_contrato_id_index" ON "recebimentos" USING btree ("conta_id","contrato_id");
