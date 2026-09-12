@@ -1,0 +1,266 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #0B0D13; color: #F0F2F4; font-family: 'Geist', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #3FE4EC; } a:hover { color: #7AF4FB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1200px; min-height: 2000px; background: #0B0D13; padding: 64px 72px 72px 72px; display: flex; flex-direction: column; gap: 56px;">
+
+  <!-- Cabeçalho -->
+  <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; padding: 40px; border: 1px solid #2B2E34; border-radius: 16px; background: #13161C; background-image: radial-gradient(520px 220px at 12% 0%, rgba(63,228,236,0.14), transparent 70%), radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 100% 100%, 22px 22px; overflow: hidden;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#3FE4EC"></rect><rect x="12" y="14" width="24" height="4" rx="2" fill="#0B0D13"></rect><rect x="12" y="22" width="24" height="4" rx="2" fill="#0B0D13"></rect><rect x="12" y="30" width="14" height="4" rx="2" fill="#0B0D13"></rect></svg>
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -0.03em;">Caderno</div>
+      </div>
+      <div style="font-size: 18px; color: #A1A5AB; line-height: 1.45; max-width: 520px; text-wrap: pretty;">Controle de empréstimos e vendas parceladas. Escuro, direto e com o número sempre em primeiro plano.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px; max-width: 360px; font-size: 14px; line-height: 1.55; color: #A1A5AB;">
+      <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Conceito</div>
+      <div style="text-wrap: pretty;">Painel de operação, não app de banco. Fundo grafite, painéis com borda fina, uma cor elétrica para tudo que é clicável. Verde, âmbar e vermelho só dizem situação: pago, vence hoje, atrasado.</div>
+    </div>
+  </div>
+
+  <!-- Paleta -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Paleta</div>
+      <div style="font-size: 14px; color: #6E7279;">Grafite em camadas. Ciano para ação. Cores vivas só em pequenas doses.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #0B0D13; border: 1px solid #2B2E34; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Fundo</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#0B0D13</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #13161C; border: 1px solid #2B2E34; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Painel</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#13161C</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #1E2026; border: 1px solid #2B2E34; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Elevado</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#1E2026 · hover, campo</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #2B2E34; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Borda</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#2B2E34</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #44484E; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Borda forte</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#44484E</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #F0F2F4; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Texto</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#F0F2F4</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #A1A5AB; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Texto 2</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#A1A5AB · apoio</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #6E7279; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Texto 3</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#6E7279 · rótulos</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #3FE4EC; border-radius: 10px; display: flex; align-items: flex-end; padding: 8px;"><div style="width: 40px; height: 16px; background: rgba(11,13,19,0.35); border-radius: 4px;"></div></div><div style="font-size: 13px; font-weight: 500;">Ciano</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#3FE4EC · ação, foco</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #66DA85; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Verde</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#66DA85 · pago, em dia</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #F7B83D; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Âmbar</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#F7B83D · vence hoje</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #FF645F; border-radius: 10px;"></div><div style="font-size: 13px; font-weight: 500;">Vermelho</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#FF645F · atrasado</div></div>
+    </div>
+    <div style="font-size: 13px; color: #6E7279;">Selos e fundos coloridos usam a mesma cor a 14% de opacidade sobre o painel. Nunca cor chapada em área grande.</div>
+  </div>
+
+  <!-- Tipografia -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Tipografia</div>
+      <div style="font-size: 14px; color: #6E7279;">Três famílias, cada uma com um papel. Geist e Geist Mono já vêm no projeto.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Sora</div>
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 36px; line-height: 1.1; letter-spacing: -0.03em;">Bom dia,<br>Felipe.</div>
+        <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Títulos de tela, saudação e valores em destaque. Geométrica, pesos 600 e 700, entreletra negativa.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Geist</div>
+        <div style="font-size: 20px; line-height: 1.35;"><span style="font-weight: 600;">Juliana Prado</span><br><span style="font-weight: 500;">Cobrar parcela</span><br><span style="font-weight: 400; color: #A1A5AB;">3 de 6 parcelas pagas</span></div>
+        <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Toda a interface: nomes, rótulos, botões, texto corrido. Pesos 400, 500 e 600.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Geist Mono</div>
+        <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 20px; line-height: 1.35; font-variant-numeric: tabular-nums;">R$ 1.100,00<br>11/10/2026<br>#0042 · 1/3</div>
+        <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Valores, datas e números de contrato em listas. Alinha na coluna como numa planilha.</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 32px; align-items: baseline; padding: 20px 24px; border: 1px solid #2B2E34; border-radius: 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 40px; color: #F0F2F4; line-height: 1; letter-spacing: -0.03em;">Aa</div><div>Sora 40 · destaque</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; color: #F0F2F4; line-height: 1; letter-spacing: -0.02em;">Aa</div><div>Sora 26 · título</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 16px; font-weight: 600; color: #F0F2F4; line-height: 1;">Aa</div><div>Geist 16/600 · nome</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 14px; color: #F0F2F4; line-height: 1;">Aa</div><div>Geist 14 · corpo</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; color: #A1A5AB; line-height: 1;">Aa</div><div>Geist 13 · apoio</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #F0F2F4; line-height: 1;">Aa</div><div>Mono 11 caps · rótulo</div></div>
+    </div>
+  </div>
+
+  <!-- Dinheiro e situação -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Dinheiro</div>
+        <div style="font-size: 14px; color: #6E7279;">O número manda na hierarquia.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">A receber</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 500; font-size: 18px; color: #6E7279;">R$</span><span style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 48px; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums;">6.020</span><span style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: #A1A5AB;">,00</span></div>
+        <div style="margin-top: 16px; display: flex; flex-direction: column; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-variant-numeric: tabular-nums;">
+          <div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #2B2E34;"><span style="color: #A1A5AB;">Emprestado</span><span>R$ 12.400,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #2B2E34;"><span style="color: #A1A5AB;">Juros previstos</span><span>R$ 800,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid #2B2E34;"><span style="color: #A1A5AB;">Recebido</span><span style="color: #66DA85;">– R$ 7.180,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 12px 0 0 0; font-weight: 500;"><span style="color: #F0F2F4;">A receber</span><span style="color: #3FE4EC;">R$ 6.020,00</span></div>
+        </div>
+      </div>
+      <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Destaque em Sora com o “R$” menor e apagado. Em tabelas, mono tabular alinhado à direita. O total da conta ganha ciano.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Situação</div>
+        <div style="font-size: 14px; color: #6E7279;">Selo com ponto e fundo translúcido.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #66DA85;"></span>Em dia</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #66DA85;"></span>Pago</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(247,184,61,0.14); color: #F7B83D; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F7B83D;"></span>Vence hoje</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255,100,95,0.14); color: #FF645F; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #FF645F;"></span>Atrasado · 4 dias</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #A1A5AB; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #6E7279;"></span>A vencer</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #F0F2F4; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F0F2F4;"></span>Quitado</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(63,228,236,0.14); color: #3FE4EC; font-size: 12px; font-weight: 500;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #3FE4EC;"></span>Renegociada</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border: 1px solid #2B2E34; border-radius: 10px; background: #0B0D13;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div style="font-size: 14px; font-weight: 500;">1ª parcela</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #A1A5AB;">11/09/2026 · R$ 366,67</div></div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 8px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 13px; font-weight: 600;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"></path></svg>Pago</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><div style="display: flex; justify-content: space-between; font-size: 13px;"><span style="font-weight: 500;">3 de 6 parcelas pagas</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #A1A5AB;">50%</span></div><div style="height: 6px; background: #2B2E34; border-radius: 3px;"><div style="height: 6px; width: 50%; background: #3FE4EC; border-radius: 3px;"></div></div></div>
+      </div>
+      <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Ponto colorido, texto na mesma cor, fundo a 14%. Parcela paga ganha o selo com check. Barra de progresso em ciano.</div>
+    </div>
+  </div>
+
+  <!-- Botões e campos -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Botões</div>
+        <div style="font-size: 14px; color: #6E7279;">Ciano para a ação principal. Uma por tela.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+          <button style="height: 44px; padding: 0 18px; background: #3FE4EC; color: #0B0D13; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Novo contrato</button>
+          <button style="height: 44px; padding: 0 18px; background: #1E2026; color: #F0F2F4; border: 1px solid #2B2E34; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">Gerar PDF</button>
+          <button style="height: 44px; padding: 0 12px; background: transparent; color: #3FE4EC; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">Ver histórico</button>
+          <button style="height: 44px; padding: 0 18px; background: transparent; color: #FF645F; border: 1px solid rgba(255,100,95,0.4); border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">Excluir</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button style="height: 36px; padding: 0 14px; background: #1E2026; color: #F0F2F4; border: 1px solid #2B2E34; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button>
+          <button style="height: 36px; padding: 0 14px; background: #1E2026; color: #F0F2F4; border: 1px solid #2B2E34; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Renegociar</button>
+          <button style="height: 36px; padding: 0 14px; background: #3FE4EC; color: #0B0D13; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button>
+          <div style="font-size: 13px; color: #6E7279; margin-left: 8px;">ações de parcela · 36px</div>
+        </div>
+        <div style="display: flex; gap: 2px; padding: 3px; background: #0B0D13; border: 1px solid #2B2E34; border-radius: 8px; width: fit-content;">
+          <div style="height: 34px; padding: 0 14px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: #A1A5AB; border-radius: 6px;">Diária</div>
+          <div style="height: 34px; padding: 0 14px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: #A1A5AB; border-radius: 6px;">Semanal</div>
+          <div style="height: 34px; padding: 0 14px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: #A1A5AB; border-radius: 6px;">Quinzenal</div>
+          <div style="height: 34px; padding: 0 14px; display: flex; align-items: center; font-size: 13px; font-weight: 600; color: #F0F2F4; background: #1E2026; border: 1px solid #44484E; border-radius: 6px;">Mensal</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Campos</div>
+        <div style="font-size: 14px; color: #6E7279;">Fundo mais escuro que o painel, 44px, foco em ciano.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #A1A5AB;">Cliente</div><div style="height: 44px; border: 1px solid #2B2E34; background: #0B0D13; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; gap: 10px; color: #6E7279; font-size: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg>Buscar por nome ou CPF</div></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #A1A5AB;">Valor emprestado</div><div style="height: 52px; border: 1px solid #3FE4EC; background: #0B0D13; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 0 3px rgba(63,228,236,0.2);"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #6E7279;">R$</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 22px; font-weight: 500;">1.000,00</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #A1A5AB;">Taxa ao mês</div><div style="height: 52px; border: 1px solid #2B2E34; background: #0B0D13; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 22px; font-weight: 500;">10</span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #6E7279;">%</span></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #A1A5AB;">Primeira parcela</div><div style="height: 44px; border: 1px solid #FF645F; background: #0B0D13; border-radius: 8px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px;"><span>30/02/2026</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A1A5AB" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div><div style="font-size: 13px; color: #FF645F;">Essa data não existe. Confira o dia e o mês.</div></div>
+        <div style="font-size: 13px; color: #A1A5AB; line-height: 1.5;">Foco: borda ciano com halo a 20%. Erro: borda vermelha e frase curta dizendo o que fazer. Dinheiro sempre em mono e maior que o resto.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listas -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Listas</div>
+      <div style="font-size: 14px; color: #6E7279;">Linhas dentro de um painel. Nada flutua com sombra.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C; overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-bottom: 1px solid #2B2E34;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: #1E2026; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 16px; flex-shrink: 0;">MA</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Marcos Andrade</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #A1A5AB;">#0042 · 3x · vence 11/10</div></div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500;">R$ 1.100,00</div><span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #66DA85;"></span>Em dia</span></div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E7279" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px;">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(255,100,95,0.14); border: 1px solid rgba(255,100,95,0.3); color: #FF645F; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 16px; flex-shrink: 0;">AF</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #FF645F;">#0039 · 4x · venceu 07/09</div></div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500;">R$ 880,00</div><span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; background: rgba(255,100,95,0.14); color: #FF645F; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #FF645F;"></span>Atrasado</span></div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E7279" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+          </div>
+        </div>
+        <div style="font-size: 13px; color: #6E7279;">Linha de contrato: iniciais em quadrado arredondado, nome, metadados em mono, valor e selo à direita.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; flex-direction: column; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C; overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #2B2E34;">
+            <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #F7B83D; width: 64px;">hoje</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500;">Juliana Prado</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;">#0041 · parcela 3/6</div></div>
+            <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500; white-space: nowrap;">R$ 440,00</div>
+            <div style="display: flex; gap: 6px;"><button style="height: 34px; padding: 0 12px; background: #1E2026; color: #F0F2F4; border: 1px solid #2B2E34; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 34px; padding: 0 12px; background: #3FE4EC; color: #0B0D13; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255,100,95,0.08);">
+            <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #FF645F; width: 64px;">07/09</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #FF645F;">#0039 · parcela 2/4 · 4 dias</div></div>
+            <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500; white-space: nowrap;">R$ 220,00</div>
+            <div style="display: flex; gap: 6px;"><button style="height: 34px; padding: 0 12px; background: #1E2026; color: #F0F2F4; border: 1px solid #2B2E34; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 34px; padding: 0 12px; background: #3FE4EC; color: #0B0D13; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button></div>
+          </div>
+        </div>
+        <div style="font-size: 13px; color: #6E7279;">Linha de parcela: prazo em mono à esquerda, ações à direita. Atraso tinge a linha com vermelho a 8%.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ícones e regras -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Ícones</div>
+        <div style="font-size: 14px; color: #6E7279;">Traço 1,75px, cantos redondos, 20px na interface.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 18px; padding: 24px; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C; color: #F0F2F4;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7"></path><path d="M17.5 13.5a6.5 6.5 0 0 1 4 6.5"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h7M9 17h7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21z"></path><path d="M9 8h6M9 12h6"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"></path><path d="M10 21h4"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"></path><path d="M10.5 6.2A10 10 0 0 1 12 6c5 0 9 6 9 6a17 17 0 0 1-3.2 3.5M6.6 6.6A17 17 0 0 0 3 12s4 6 9 6a9 9 0 0 0 3.4-.7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4z"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18H6z"></path><path d="M9 7h6M9 11h6M9 15h3"></path></svg>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 26px; line-height: 1; letter-spacing: -0.02em;">Regras da casa</div>
+      </div>
+      <div style="display: flex; flex-direction: column; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C; padding: 4px 20px;">
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #2B2E34; font-size: 14px; line-height: 1.5;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #3FE4EC; font-size: 12px; padding-top: 3px;">01</span><span><strong style="font-weight: 600;">Escuro por padrão, em camadas.</strong> Fundo, painel, elevado. Profundidade vem da camada e da borda de 1px, não de sombra.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #2B2E34; font-size: 14px; line-height: 1.5;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #3FE4EC; font-size: 12px; padding-top: 3px;">02</span><span><strong style="font-weight: 600;">O número fala primeiro.</strong> Valor maior que o nome; nome maior que o resto. Sempre tabular.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #2B2E34; font-size: 14px; line-height: 1.5;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #3FE4EC; font-size: 12px; padding-top: 3px;">03</span><span><strong style="font-weight: 600;">Uma cor de ação.</strong> Ciano em botão principal, link, foco e progresso. Verde é pago ou dinheiro que entrou, âmbar é vence hoje, vermelho é atraso. Nunca em botão, exceto Excluir, sempre com confirmação.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #2B2E34; font-size: 14px; line-height: 1.5;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #3FE4EC; font-size: 12px; padding-top: 3px;">04</span><span><strong style="font-weight: 600;">Cantos de 8px em controle, 12px em painel.</strong> Brilho de ciano só no herói do Início. Nada de gradiente em botão ou texto.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; font-size: 14px; line-height: 1.5;"><span style="font-family: 'Geist Mono', ui-monospace, monospace; color: #3FE4EC; font-size: 12px; padding-top: 3px;">05</span><span><strong style="font-weight: 600;">Escreve como gente.</strong> “Vence hoje”, “4 dias atrasado”, “Tudo em dia”. Nada de “status: pending”.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

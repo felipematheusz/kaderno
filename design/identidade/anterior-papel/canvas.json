@@ -1,0 +1,101 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Identidade visual",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 2840
+    },
+    {
+      "file": "Inicio.dc.html",
+      "title": "Início · desktop",
+      "x": 0,
+      "y": 3000,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Contratos.dc.html",
+      "title": "Contratos · mobile",
+      "x": 0,
+      "y": 4060,
+      "w": 390,
+      "h": 920
+    },
+    {
+      "file": "Contrato.dc.html",
+      "title": "Detalhe do contrato · mobile",
+      "x": 480,
+      "y": 4060,
+      "w": 390,
+      "h": 920
+    },
+    {
+      "file": "Receber.dc.html",
+      "title": "Receber pagamento · mobile",
+      "x": 960,
+      "y": 4060,
+      "w": 390,
+      "h": 920
+    },
+    {
+      "file": "NovoContrato.dc.html",
+      "title": "Novo contrato · mobile",
+      "x": 1440,
+      "y": 4060,
+      "w": 390,
+      "h": 920
+    },
+    {
+      "file": "DirecaoB.dc.html",
+      "title": "Direção B · Cofre (baixa fidelidade)",
+      "x": 0,
+      "y": 5140,
+      "w": 680,
+      "h": 520
+    },
+    {
+      "file": "DirecaoC.dc.html",
+      "title": "Direção C · Recibo (baixa fidelidade)",
+      "x": 840,
+      "y": 5140,
+      "w": 680,
+      "h": 520
+    }
+  ],
+  "annotations": [
+    {
+      "id": "nome-provisorio",
+      "x": 1280,
+      "y": 0,
+      "w": 280,
+      "text": "\"Caderno\" é nome provisório. Veio do conceito (o caderninho de quem empresta). Troque pelo nome definitivo no wordmark e no menu."
+    },
+    {
+      "id": "direcao-a",
+      "x": 1280,
+      "y": 150,
+      "w": 280,
+      "text": "Direção A · Caderno (a escolhida)\n\nPapel quente, tinta preta, serifa nos títulos e mono nos números. Listas com linhas em vez de cartões. Uma cor de ação (azul-caneta); verde, âmbar e vermelho só marcam situação.\n\nPor quê: nenhuma fintech parece com isso, e conversa com o jeito informal de quem empresta.\nContra: pede disciplina tipográfica para não virar bege sem graça."
+    },
+    {
+      "id": "telas",
+      "x": 1520,
+      "y": 3000,
+      "w": 280,
+      "text": "As telas seguem o mapa do Jurex: Início, Contratos, Detalhe, Receber pagamento e Novo contrato. Nomes e valores são exemplo, não dados reais."
+    },
+    {
+      "id": "alternativas",
+      "x": 1520,
+      "y": 5140,
+      "w": 300,
+      "text": "Direções alternativas, só para comparar (baixa fidelidade).\n\nB · Cofre: escuro e latão, condensada. Passa força e sigilo. Contra: pesado de dia.\n\nC · Recibo: branco, mono, bordas grossas, lima. Cara de ferramenta. Contra: frio, lembra painel de dev."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

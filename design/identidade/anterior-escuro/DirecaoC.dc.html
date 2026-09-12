@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #0B0D13; color: #F0F2F4; font-family: 'Geist', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #B5F745; } a:hover { color: #CDFF6E; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 680px; height: 520px; background: #0B0D13; padding: 28px; display: flex; flex-direction: column; gap: 20px; overflow: hidden; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 28px 28px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 10px;"><div style="width: 28px; height: 28px; border-radius: 6px; background: #B5F745;"></div><div style="font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.04em; text-transform: uppercase;">Caderno</div></div>
+    <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E7279;">Direção C · Lima</div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #13161C; border: 1px solid #2B2E34; border-radius: 4px;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Emprestado</div><div style="font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.04em;">12.400</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #13161C; border: 1px solid #2B2E34; border-radius: 4px;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6E7279;">Recebido</div><div style="font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.04em;">7.180</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #B5F745; border-radius: 4px; color: #0B0D13;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(11,13,19,0.6);">A receber</div><div style="font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.04em;">6.020</div></div>
+  </div>
+  <div style="display: flex; flex-direction: column; background: #13161C; border: 1px solid #2B2E34; border-radius: 4px; overflow: hidden;">
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #2B2E34; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px;"><span style="width: 56px; color: #F7B83D;">HOJE</span><span style="flex-grow: 1; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 14px;">Juliana Prado</span><span style="color: #6E7279;">#0041 3/6</span><span style="font-weight: 500;">440,00</span></div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #2B2E34; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; border-left: 3px solid #FF645F;"><span style="width: 56px; color: #FF645F;">-4D</span><span style="flex-grow: 1; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 14px;">Antônio Ferreira</span><span style="color: #6E7279;">#0039 2/4</span><span style="font-weight: 500;">220,00</span></div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6E7279;"><span style="width: 56px;">+1D</span><span style="flex-grow: 1; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 14px; color: #A1A5AB;">Renata Lima</span><span>#0038 5/8</span><span style="font-weight: 500; color: #A1A5AB;">400,00</span></div>
+  </div>
+  <div style="display: flex; gap: 10px; align-items: center; margin-top: auto;">
+    <button style="height: 44px; padding: 0 18px; background: #B5F745; color: #0B0D13; border: none; border-radius: 4px; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer;">+ Novo contrato</button>
+    <button style="height: 44px; padding: 0 18px; background: transparent; color: #F0F2F4; border: 1px solid #44484E; border-radius: 4px; font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer;">Cobrar</button>
+    <div style="margin-left: auto; font-size: 12px; color: #6E7279; max-width: 280px; text-align: right; line-height: 1.4;">Escuro com lima, grade ao fundo, cantos retos, caixa alta. Mais agressivo e "terminal". Contra: cansa mais e pode parecer app de cripto.</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #0B0D13; color: #F0F2F4; font-family: 'Geist', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #3FE4EC; } a:hover { color: #7AF4FB; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="position: relative; width: 390px; height: 920px; background: #0B0D13; overflow: hidden; display: flex; flex-direction: column;">
+  <div style="padding: 60px 20px 0 20px; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: baseline; gap: 10px;"><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 28px; line-height: 1; letter-spacing: -0.03em;">Contratos</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 13px; color: #6E7279;">12</div></div>
+      <button style="width: 44px; height: 44px; background: #13161C; border: 1px solid #2B2E34; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; color: #F0F2F4; cursor: pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg></button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; padding: 3px; background: #13161C; border: 1px solid #2B2E34; border-radius: 8px;">
+      <div style="height: 36px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600; color: #F0F2F4; background: #1E2026; border: 1px solid #44484E; border-radius: 6px;">Contratos</div>
+      <div style="height: 36px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: #A1A5AB; border-radius: 6px;">Vendas</div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; background: #3FE4EC; color: #0B0D13; border-radius: 999px; font-size: 13px; font-weight: 600;">Todos</span>
+      <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; background: #13161C; color: #A1A5AB; border: 1px solid #2B2E34; border-radius: 999px; font-size: 13px; font-weight: 500;">Em dia</span>
+      <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; background: #13161C; color: #A1A5AB; border: 1px solid #2B2E34; border-radius: 999px; font-size: 13px; font-weight: 500;">Atrasados</span>
+      <span style="display: inline-flex; align-items: center; height: 32px; padding: 0 12px; background: #13161C; color: #A1A5AB; border: 1px solid #2B2E34; border-radius: 999px; font-size: 13px; font-weight: 500;">Quitados</span>
+    </div>
+  </div>
+
+  <div style="margin: 16px 20px 0 20px; display: flex; flex-direction: column; border: 1px solid #2B2E34; border-radius: 12px; background: #13161C; overflow: hidden;">
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: #1E2026; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">MA</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Marcos Andrade</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0042 · 1/3 · vence 11/10</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 1.100,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #66DA85;"></span>Em dia</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: #1E2026; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">JP</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Juliana Prado</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0041 · 2/6 · vence hoje</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 2.640,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(247,184,61,0.14); color: #F7B83D; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #F7B83D;"></span>Vence hoje</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34; background: rgba(255,100,95,0.06);">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(255,100,95,0.14); border: 1px solid rgba(255,100,95,0.3); color: #FF645F; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">AF</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #FF645F;">#0039 · 4 dias atrasado</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 880,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(255,100,95,0.14); color: #FF645F; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #FF645F;"></span>Atrasado</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: #1E2026; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">BS</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Beatriz Souza</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0037 · 3/6 · vence 20/09</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 1.980,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #66DA85;"></span>Em dia</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: #1E2026; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">RL</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Renata Lima</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0038 · venda · amanhã</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 3.200,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(102,218,133,0.14); color: #66DA85; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #66DA85;"></span>Em dia</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; border-bottom: 1px solid #2B2E34; opacity: 0.65;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: transparent; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">CE</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Carlos Eduardo</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0035 · quitado em 02/09</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 5.500,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #F0F2F4; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #F0F2F4;"></span>Quitado</span></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 12px 12px; opacity: 0.65;">
+      <div style="width: 36px; height: 36px; border-radius: 9px; background: transparent; border: 1px solid #2B2E34; display: flex; align-items: center; justify-content: center; font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 13px; flex-shrink: 0;">PH</div>
+      <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0;"><div style="font-size: 15px; font-weight: 600;">Paulo Henrique</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: #A1A5AB;">#0033 · quitado em 15/08</div></div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; white-space: nowrap;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 660,00</div><span style="display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #F0F2F4; font-size: 11px; font-weight: 500;"><span style="width: 5px; height: 5px; border-radius: 50%; background: #F0F2F4;"></span>Quitado</span></div>
+    </div>
+  </div>
+
+  <!-- Rodapé fixo -->
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; background: #0B0D13;">
+    <div style="padding: 12px 20px; background: linear-gradient(to bottom, rgba(11,13,19,0), #0B0D13 40%);"><button style="width: 100%; height: 48px; background: #3FE4EC; color: #0B0D13; border: none; border-radius: 10px; font-family: 'Geist', system-ui, sans-serif; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Novo contrato</button></div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid #2B2E34; padding: 8px 8px 24px 8px; background: #13161C;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 52px; justify-content: center; color: #6E7279; font-size: 11px; font-weight: 500;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>Início</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 52px; justify-content: center; color: #6E7279; font-size: 11px; font-weight: 500;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7"></path><path d="M17.5 13.5a6.5 6.5 0 0 1 4 6.5"></path></svg>Clientes</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 52px; justify-content: center; color: #3FE4EC; font-size: 11px; font-weight: 600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h7M9 17h7"></path></svg>Contratos</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 52px; justify-content: center; color: #6E7279; font-size: 11px; font-weight: 500;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21z"></path><path d="M9 8h6M9 12h6"></path></svg>Parcelas</div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; height: 52px; justify-content: center; color: #6E7279; font-size: 11px; font-weight: 500;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle></svg>Mais</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

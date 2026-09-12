@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #F6F9FC; color: #0D253D; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #533AFD; } a:hover { color: #4434D4; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1200px; min-height: 1200px; background: #F6F9FC; padding: 44px 48px 40px 48px; display: flex; flex-direction: column; gap: 24px;">
+
+  <!-- Cabeçalho -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#533AFD"></rect><rect x="12" y="14" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="22" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="30" width="14" height="4" rx="2" fill="#FFFFFF"></rect></svg>
+      <div style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 30px; letter-spacing: -0.025em; line-height: 1;">Caderno</div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+      <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #64748D;">Direção F · Inspirada na Stripe</div>
+      <div style="font-size: 14px; color: #425466; max-width: 560px; text-align: right; line-height: 1.45; text-wrap: pretty;">Tipografia fina (peso 300) com tracking negativo, índigo em pílula como única ação, painéis brancos com sombra leve e um degradê suave no balanço. Hanken Grotesk faz o papel da Söhne.</div>
+    </div>
+  </div>
+
+  <!-- Balanço -->
+  <div style="display: flex; flex-direction: column; gap: 22px; padding: 26px 28px; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08); background-image: linear-gradient(100deg, rgba(245,233,212,0.85), rgba(230,224,245,0.7) 45%, rgba(83,58,253,0.08) 80%, rgba(234,34,97,0.08));">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">Emprestado</div>
+        <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 16px; color: #64748D;">R$</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 42px; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums;">12.400</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 18px; color: #425466;">,00</span></div>
+        <div style="font-size: 13px; color: #425466;">em 7 contratos ativos</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">Recebido</div>
+        <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 16px; color: #64748D;">R$</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 42px; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: #0E7A45;">7.180</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 18px; color: #425466;">,00</span></div>
+        <div style="font-size: 13px; color: #425466;">R$ 1.240,00 só neste mês</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">A receber</div><span style="display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 999px; background: rgba(234,34,97,0.10); color: #C0224F; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #C0224F;"></span>1 atrasada</span></div>
+        <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 16px; color: #64748D;">R$</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 42px; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: #533AFD;">6.020</span><span style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 18px; color: #425466;">,00</span></div>
+        <div style="font-size: 13px; color: #425466;">R$ 800,00 são juros previstos</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; height: 12px; gap: 3px;">
+        <div style="width: 54.4%; background: #0E7A45; border-radius: 6px;"></div>
+        <div style="width: 43.9%; background: #533AFD; border-radius: 6px;"></div>
+        <div style="width: 1.7%; min-width: 8px; background: #C0224F; border-radius: 6px;"></div>
+      </div>
+      <div style="display: flex; gap: 20px; font-size: 13px; color: #425466;">
+        <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #0E7A45;"></span>Recebido <span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; color: #0D253D;">R$ 7.180,00</span></span>
+        <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #533AFD;"></span>A vencer <span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; color: #0D253D;">R$ 5.800,00</span></span>
+        <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 8px; height: 8px; border-radius: 2px; background: #C0224F;"></span>Atrasado <span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; color: #0D253D;">R$ 220,00</span></span>
+        <span style="margin-left: auto; color: #64748D;">O balanço vira uma barra: dá para ver de longe quanto já voltou.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Duas colunas -->
+  <div style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px;">
+    <div style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08); overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="display: flex; align-items: baseline; gap: 10px;"><div style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 400; font-size: 17px; letter-spacing: -0.025em;">Parcelas de hoje</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">2 · R$ 806,67</div></div>
+        <a href="#" style="font-size: 13px; font-weight: 600; text-decoration: none;">Ver agenda</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 11px 20px; border-bottom: 1px solid #E3E8EE; background: rgba(234,34,97,0.04);">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #C0224F; width: 60px;">07/09</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #C0224F;">#0039 · parcela 2/4 · 4 dias atrasada</div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 14px; font-weight: 500; white-space: nowrap;">R$ 220,00</div>
+        <div style="display: flex; gap: 6px; width: 132px; justify-content: flex-end;"><button style="height: 32px; padding: 0 12px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 32px; padding: 0 12px; background: #533AFD; color: #FFFFFF; border: none; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 11px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D; width: 60px;">hoje</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #425466;">Marcos Andrade</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0042 · parcela 1/3 · recebida via Pix</div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 14px; font-weight: 500; white-space: nowrap; color: #64748D; text-decoration: line-through;">R$ 366,67</div>
+        <div style="display: flex; justify-content: flex-end; width: 132px;"><span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(14,122,69,0.12); color: #0E7A45; font-size: 12px; font-weight: 600;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"></path></svg>Pago</span></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 11px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #B25E0A; width: 60px;">hoje</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500;">Juliana Prado</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0041 · parcela 3/6</div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 14px; font-weight: 500; white-space: nowrap;">R$ 440,00</div>
+        <div style="display: flex; gap: 6px; width: 132px; justify-content: flex-end;"><button style="height: 32px; padding: 0 12px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 32px; padding: 0 12px; background: #533AFD; color: #FFFFFF; border: none; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 11px 20px;">
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D; width: 60px;">amanhã</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #425466;">Renata Lima</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0038 · venda · parcela 5/8</div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 14px; font-weight: 500; white-space: nowrap; color: #425466;">R$ 400,00</div>
+        <div style="display: flex; gap: 6px; width: 132px; justify-content: flex-end;"><button style="height: 32px; padding: 0 12px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Lembrar</button></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08); overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="display: flex; align-items: baseline; gap: 10px;"><div style="font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 400; font-size: 17px; letter-spacing: -0.025em;">Contratos ativos</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">7</div></div>
+        <a href="#" style="font-size: 13px; font-weight: 600; text-decoration: none;">Ver todos</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-size: 14px; font-weight: 500;">Marcos Andrade</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500;">R$ 1.100,00</div></div>
+        <div style="display: flex; gap: 4px; height: 8px;"><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: rgba(83,58,253,0.16); outline: 1.5px solid #533AFD; outline-offset: -1.5px;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0042 · 1 de 3 pagas · próxima 11/10</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-size: 14px; font-weight: 500;">Juliana Prado</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500;">R$ 2.640,00</div></div>
+        <div style="display: flex; gap: 4px; height: 8px;"><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: rgba(83,58,253,0.16); outline: 1.5px solid #533AFD; outline-offset: -1.5px;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0041 · 2 de 6 pagas · próxima hoje</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 20px; border-bottom: 1px solid #E3E8EE;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-size: 14px; font-weight: 500;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500;">R$ 880,00</div></div>
+        <div style="display: flex; gap: 4px; height: 8px;"><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: #C0224F;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #C0224F;">#0039 · 1 de 4 pagas · 2ª atrasada 4 dias</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><div style="font-size: 14px; font-weight: 500;">Renata Lima <span style="font-weight: 400; color: #64748D;">· Notebook Dell</span></div><div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; font-weight: 500;">R$ 3.200,00</div></div>
+        <div style="display: flex; gap: 4px; height: 8px;"><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: #0D253D;"></div><div style="flex: 1; border-radius: 4px; background: rgba(83,58,253,0.16); outline: 1.5px solid #533AFD; outline-offset: -1.5px;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div><div style="flex: 1; border-radius: 4px; background: #E3E8EE;"></div></div>
+        <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 12px; color: #64748D;">#0038 · venda · 4 de 8 pagas · próxima amanhã</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Componentes -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08);">
+      <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">Ações</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <button style="height: 42px; padding: 0 18px; background: #533AFD; color: #FFFFFF; border: none; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Novo contrato</button>
+        <button style="height: 42px; padding: 0 16px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;">Gerar PDF</button>
+        <button style="height: 42px; padding: 0 8px; background: transparent; color: #533AFD; border: none; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 600; cursor: pointer;">Ver histórico</button>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
+        <button style="height: 34px; padding: 0 12px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button>
+        <button style="height: 34px; padding: 0 12px; background: #FFFFFF; color: #533AFD; border: 1px solid #533AFD; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Renegociar</button>
+        <button style="height: 34px; padding: 0 12px; background: #533AFD; color: #FFFFFF; border: none; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; cursor: pointer;">Pagar</button>
+        <button style="height: 34px; padding: 0 12px; background: transparent; color: #C0224F; border: 1px solid rgba(234,34,97,0.4); border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Excluir</button>
+      </div>
+      <div style="display: flex; gap: 2px; padding: 3px; background: #F6F9FC; border: 1px solid #E3E8EE; border-radius: 6px;">
+        <div style="flex: 1; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #425466; border-radius: 999px;">Diária</div>
+        <div style="flex: 1; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #425466; border-radius: 999px;">Semanal</div>
+        <div style="flex: 1; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; color: #425466; border-radius: 999px;">Quinzenal</div>
+        <div style="flex: 1; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #0D253D; background: #FFFFFF; border: 1px solid #E3E8EE; box-shadow: 0 1px 3px rgba(0,55,112,0.10); border-radius: 999px;">Mensal</div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: #F6F9FC; border-radius: 6px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;"><div style="font-size: 14px; font-weight: 500;">Cobrar juros em atraso</div><div style="font-size: 12px; color: #64748D;">2% ao dia sobre a parcela vencida</div></div>
+        <div style="width: 44px; height: 26px; border-radius: 13px; background: #533AFD; position: relative; flex-shrink: 0;"><div style="position: absolute; top: 3px; left: 21px; width: 20px; height: 20px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 1px 2px rgba(0,0,0,0.2);"></div></div>
+      </div>
+      <div style="font-size: 12px; color: #64748D; line-height: 1.45;">Pílulas em tudo. Secundário é contorno índigo, nunca preenchido: uma ação preenchida por bloco.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08);">
+      <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">Campos</div>
+      <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #425466;">Cliente</div><div style="height: 44px; border: 1px solid #E3E8EE; background: #FFFFFF; border-radius: 6px; padding: 0 12px; display: flex; align-items: center; gap: 10px; color: #64748D; font-size: 14px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg>Buscar por nome ou CPF</div></div>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="font-size: 13px; font-weight: 500; color: #425466;">Valor emprestado</div>
+        <div style="height: 56px; border: 1.5px solid #533AFD; background: #FFFFFF; border-radius: 6px; padding: 0 14px; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 0 4px rgba(83,58,253,0.10);"><span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #64748D;">R$</span><span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 24px; font-weight: 500;">1.000,00</span></div>
+        <div style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: rgba(83,58,253,0.10); border-radius: 6px; font-size: 13px; color: #533AFD;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg><span><strong style="font-weight: 600;">3x de R$ 366,67</strong> · total R$ 1.100,00 · lucro R$ 100,00</span></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #425466;">Taxa ao mês</div><div style="height: 44px; border: 1px solid #E3E8EE; background: #FFFFFF; border-radius: 6px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between;"><span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 18px; font-weight: 500;">10</span><span style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #64748D;">%</span></div></div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #425466;">Primeira parcela</div><div style="height: 44px; border: 1px solid #C0224F; background: #FFFFFF; border-radius: 6px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 14px;"><span>30/02/26</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748D" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div></div>
+      </div>
+      <div style="font-size: 12px; color: #C0224F; margin-top: -8px;">Essa data não existe. Confira o dia e o mês.</div>
+      <div style="font-size: 12px; color: #64748D; line-height: 1.45;">Cantos de 6px nos campos, sombra em vez de borda forte. Números tabulares sempre.</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 20px; background: #FFFFFF; border: 1px solid #E3E8EE; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,55,112,0.08);">
+      <div style="font-family: 'Geist Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #64748D;">Situação e cliente</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(14,122,69,0.12); color: #0E7A45; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #0E7A45;"></span>Em dia</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(178,94,10,0.12); color: #B25E0A; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B25E0A;"></span>Vence hoje</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(234,34,97,0.10); color: #C0224F; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #C0224F;"></span>Atrasado · 4 dias</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: #F6F9FC; color: #425466; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #64748D;"></span>Quitado</span>
+        <span style="display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(83,58,253,0.10); color: #533AFD; font-size: 12px; font-weight: 600;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #533AFD;"></span>Renegociada</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; padding: 12px; background: #F6F9FC; border-radius: 6px;">
+        <div style="position: relative; width: 56px; height: 56px; flex-shrink: 0;">
+          <svg width="56" height="56" viewBox="0 0 56 56" style="position: absolute; inset: 0; transform: rotate(-90deg);"><circle cx="28" cy="28" r="25" fill="none" stroke="#E3E8EE" stroke-width="3"></circle><circle cx="28" cy="28" r="25" fill="none" stroke="#0E7A45" stroke-width="3" stroke-linecap="round" stroke-dasharray="128.8 157.1"></circle></svg>
+          <div style="position: absolute; inset: 8px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 14px;">MA</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1;"><div style="font-size: 14px; font-weight: 500;">Marcos Andrade</div><div style="font-size: 12px; color: #425466;">Score <strong style="font-weight: 600; color: #0E7A45;">82</strong> · 3 contratos · cliente desde 2025</div></div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="font-size: 12px; color: #64748D;">Prévia da cobrança · lembrete amigável</div>
+        <div style="padding: 12px 14px; background: #F6F9FC; border: 1px solid #E3E8EE; border-radius: 6px 6px 6px 4px; font-size: 13px; line-height: 1.5; color: #0D253D;">Oi Marcos, tudo bem? Passando para lembrar da parcela <strong style="font-weight: 600;">2/3 de R$ 366,67</strong>, que vence em <strong style="font-weight: 600;">11/10</strong>. Qualquer coisa é só me chamar.</div>
+        <div style="display: flex; justify-content: flex-end;"><button style="height: 34px; padding: 0 12px; background: #533AFD; color: #FFFFFF; border: none; border-radius: 999px; font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4z"></path></svg>Enviar no WhatsApp</button></div>
+      </div>
+      <div style="font-size: 12px; color: #64748D; line-height: 1.45;">Selos em pílula com o mesmo tom fino. O balão usa o azul-gelo do fundo.</div>
+    </div>
+  </div>
+
+  <!-- Motivação -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 4px;">
+    <div style="font-size: 13px; color: #425466; line-height: 1.5;"><strong style="font-weight: 600; color: #0D253D;">Por quê.</strong> Cara de infraestrutura financeira séria: leve, precisa, com o número em fonte fina que parece impressa.</div>
+    <div style="font-size: 13px; color: #425466; line-height: 1.5;"><strong style="font-weight: 600; color: #0D253D;">Contra.</strong> Peso 300 pede tela boa e tamanho grande; em celular barato o texto fino some. O índigo é vizinho do violeta da B.</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

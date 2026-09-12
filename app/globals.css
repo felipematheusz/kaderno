@@ -1,26 +1,169 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Identidade visual Caderno — estilo Wise.
+ * Fonte da verdade: DESIGN.md na raiz do projeto.
+ *
+ * As paletas, raios, sombras e escalas padrão do Tailwind são zeradas de
+ * propósito: só existe o que está aqui. Se uma classe como `bg-zinc-100`,
+ * `rounded-lg` ou `text-sm` "não funciona", é porque ela não faz parte da
+ * identidade — use o token equivalente abaixo.
+ */
+
+@theme {
+  /* ── Cores ─────────────────────────────────────────────── */
+  --color-*: initial;
+
+  /* Marca: verde Wise é SÓ ação principal. Nunca selo, nunca sucesso. */
+  --color-primary: #9fe870;
+  --color-primary-active: #cdffad;
+  --color-primary-neutral: #c5edab;
+  --color-primary-pale: #e2f6d5;
+
+  /* Superfícies */
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #e8ebe6;
+
+  /* Texto (e tinta como superfície invertida) */
+  --color-ink: #0e0f0c;
+  --color-ink-soft: #2a2c27;
+  --color-ink-deep: #163300;
+  --color-body: #454745;
+  --color-mute: #868685;
+  --color-mute-inverse: #b7c4b0;
+
+  /* Situação */
+  --color-positive: #2ead4b;
+  --color-positive-deep: #054d28;
+  --color-warning: #ffd11a;
+  --color-warning-deep: #b86700;
+  --color-warning-content: #4a3b1c;
+  --color-negative: #d03238;
+  --color-negative-deep: #a72027;
+  --color-negative-darkest: #a7000d;
+  --color-negative-bg: #320707;
+
+  /* Só dentro de ilustração */
+  --color-accent-orange: #ffc091;
+  --color-accent-cyan: #38c8ff;
+
+  /* ── Raios ─────────────────────────────────────────────── */
+  --radius-*: initial;
+  --radius-sm: 8px; /* linha de menu, selo pequeno */
+  --radius-md: 12px; /* campo de formulário */
+  --radius-lg: 16px; /* cartão interno, bloco dentro de cartão */
+  --radius-xl: 24px; /* botão e cartão: a assinatura da marca */
+  --radius-pill: 9999px; /* selo de situação, filtro */
+
+  /* ── Sombras: a elevação vem da troca de superfície ───── */
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --shadow-overlay: 0 8px 24px rgb(14 15 12 / 0.12); /* só modal e toast */
+
+  /* ── Tipografia: 900 no destaque, 600 no resto ──────── */
+  --text-*: initial;
+
+  --text-display-mega: 126px;
+  --text-display-mega--line-height: 0.85;
+  --text-display-mega--font-weight: 900;
+  --text-display-mega--letter-spacing: -0.01em;
+
+  --text-display-xxl: 96px;
+  --text-display-xxl--line-height: 0.85;
+  --text-display-xxl--font-weight: 900;
+  --text-display-xxl--letter-spacing: -0.01em;
+
+  --text-display-xl: 64px;
+  --text-display-xl--line-height: 0.85;
+  --text-display-xl--font-weight: 900;
+  --text-display-xl--letter-spacing: -0.01em;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 0.85;
+  --text-display-lg--font-weight: 900;
+  --text-display-lg--letter-spacing: -0.01em;
+
+  --text-display-md: 40px;
+  --text-display-md--line-height: 0.85;
+  --text-display-md--font-weight: 900;
+  --text-display-md--letter-spacing: -0.01em;
+
+  --text-display-sm: 32px;
+  --text-display-sm--line-height: 1.2;
+  --text-display-sm--font-weight: 600;
+  --text-display-sm--letter-spacing: -0.03em;
+
+  --text-display-xs: 24px;
+  --text-display-xs--line-height: 1.3;
+  --text-display-xs--font-weight: 600;
+  --text-display-xs--letter-spacing: -0.02em;
+
+  --text-body-lg: 20px;
+  --text-body-lg--line-height: 1.5;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.5;
+
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 1.43;
+
+  --text-caption: 12px;
+  --text-caption--line-height: 1.33;
+
+  --text-button: 16px;
+  --text-button--line-height: 1.5;
+  --text-button--font-weight: 600;
+
+  /* ── Fonte: só Geist (substituta oficial da Wise Sans) ── */
+  /* Sem serifa e sem mono. `--font-*` não é zerado inteiro porque apagaria os pesos. */
+  --font-serif: initial;
+  --font-mono: initial;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/*
+ * Menu lateral recolhido (só ícones). `data-menu` fica no <nav> do Sidebar:
+ * "fechado" recolhe sempre; "auto" recolhe só abaixo de 1280px; "aberto" nunca.
+ * Vale para o próprio <nav> e tudo dentro dele: `compacto:hidden`, `compacto:w-18`.
+ */
+@custom-variant compacto {
+  &:where([data-menu="fechado"], [data-menu="fechado"] *) {
+    @slot;
+  }
+  @media (width < 80rem) {
+    &:where([data-menu="auto"], [data-menu="auto"] *) {
+      @slot;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --font-sans: var(--font-geist), "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background-color: var(--color-canvas-soft);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body-md);
+    line-height: var(--text-body-md--line-height);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Modal aberto trava a rolagem da página por baixo. */
+  html:has(dialog[open]:modal) {
+    overflow: hidden;
+  }
+
+  /* Foco: contorno de 2px em tinta, sem halo. */
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
 }

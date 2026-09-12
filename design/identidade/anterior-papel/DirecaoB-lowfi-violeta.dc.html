@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #F9FAFC; color: #12161F; font-family: 'Geist', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #6D4BE0; } a:hover { color: #5A3BC4; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 680px; height: 520px; background: #F9FAFC; padding: 28px; display: flex; flex-direction: column; gap: 20px; overflow: hidden;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 10px;"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#6D4BE0"></rect><rect x="12" y="14" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="22" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="30" width="14" height="4" rx="2" fill="#FFFFFF"></rect></svg><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.03em;">Caderno</div></div>
+    <div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7280;">Direção B · Claro</div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #FFFFFF; border: 1px solid #DCDEE2; border-radius: 12px;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280;">Emprestado</div><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 30px; line-height: 1; letter-spacing: -0.03em;">R$ 12.400</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #FFFFFF; border: 1px solid #DCDEE2; border-radius: 12px;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280;">Recebido</div><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 30px; line-height: 1; letter-spacing: -0.03em; color: #1F9D55;">R$ 7.180</div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px; background: #6D4BE0; border-radius: 12px; color: #FFFFFF;"><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7);">A receber</div><div style="font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; font-weight: 600; font-size: 30px; line-height: 1; letter-spacing: -0.03em;">R$ 6.020</div></div>
+  </div>
+  <div style="display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #DCDEE2; border-radius: 12px; overflow: hidden;">
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #EEF0F3;"><span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; background: #FEF3C7; color: #B45309; font-size: 11px; font-weight: 500;">hoje</span><div style="flex-grow: 1; font-size: 14px; font-weight: 500;">Juliana Prado</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6B7280;">#0041 · 3/6</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 440,00</div></div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-bottom: 1px solid #EEF0F3;"><span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; background: #FEE2E2; color: #B91C1C; font-size: 11px; font-weight: 500;">4 dias</span><div style="flex-grow: 1; font-size: 14px; font-weight: 500;">Antônio Ferreira</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6B7280;">#0039 · 2/4</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">R$ 220,00</div></div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 12px 16px;"><span style="display: inline-flex; align-items: center; gap: 6px; height: 22px; padding: 0 8px; border-radius: 999px; background: #F0F2F4; color: #6B7280; font-size: 11px; font-weight: 500;">amanhã</span><div style="flex-grow: 1; font-size: 14px; font-weight: 500; color: #6B7280;">Renata Lima</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #6B7280;">#0038 · 5/8</div><div style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500; color: #6B7280;">R$ 400,00</div></div>
+  </div>
+  <div style="display: flex; gap: 10px; align-items: center; margin-top: auto;">
+    <button style="height: 44px; padding: 0 18px; background: #6D4BE0; color: #FFFFFF; border: none; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-weight: 600; font-size: 14px; cursor: pointer;">Novo contrato</button>
+    <button style="height: 44px; padding: 0 18px; background: #FFFFFF; color: #12161F; border: 1px solid #DCDEE2; border-radius: 8px; font-family: 'Geist', system-ui, sans-serif; font-weight: 500; font-size: 14px; cursor: pointer;">Cobrar</button>
+    <div style="margin-left: auto; font-size: 12px; color: #6B7280; max-width: 280px; text-align: right; line-height: 1.4;">Mesma estrutura, em fundo claro com violeta. Mais leve de dia e mais próximo do que o mercado espera. Contra: mais parecido com todo SaaS.</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

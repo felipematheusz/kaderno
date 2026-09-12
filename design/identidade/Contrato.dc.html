@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;900&amp;display=swap">
+  <style>
+    body { margin: 0; background: #E8EBE6; color: #0E0F0C; font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+    a { color: #0E0F0C; } a:hover { color: #163300; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="position: relative; width: 390px; height: 920px; background: #E8EBE6; overflow: hidden; display: flex; flex-direction: column;">
+  <div style="padding: 56px 16px 0 16px; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <button style="width: 48px; height: 48px; background: #FFFFFF; border: none; border-radius: 24px; display: inline-flex; align-items: center; justify-content: center; color: #0E0F0C; cursor: pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"></path></svg></button>
+      <div style="font-size: 14px; font-weight: 600; color: #454745;">Contrato #0042</div>
+      <button style="width: 48px; height: 48px; background: #FFFFFF; border: none; border-radius: 24px; display: inline-flex; align-items: center; justify-content: center; color: #0E0F0C; cursor: pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="19" cy="12" r="1.5"></circle></svg></button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px; padding: 0 4px;">
+      <div style="font-weight: 900; font-size: 40px; line-height: 0.85; letter-spacing: -0.01em;">Marcos Andrade</div>
+      <div style="display: flex; align-items: center; gap: 10px;"><span style="display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 999px; background: #E2F6D5; color: #054D28; font-size: 14px; font-weight: 600;">Em dia</span><span style="font-size: 14px; color: #454745;">3x mensal · desde 11/09/2026</span></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 24px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 16px; border-right: 1px solid #E8EBE6;"><div style="font-size: 12px; color: #868685;">Emprestado</div><div style="font-size: 14px; font-weight: 600; white-space: nowrap;">R$ 1.000,00</div></div>
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 16px; border-right: 1px solid #E8EBE6;"><div style="font-size: 12px; color: #868685;">Juros</div><div style="font-size: 14px; font-weight: 600; white-space: nowrap;">10% ao mês</div></div>
+        <div style="display: flex; flex-direction: column; gap: 4px; padding: 16px 16px;"><div style="font-size: 12px; color: #868685;">Total</div><div style="font-size: 14px; font-weight: 600; white-space: nowrap;">R$ 1.100,00</div></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 16px 16px; border-top: 1px solid #E8EBE6;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;"><span style="font-size: 14px; font-weight: 600;">1 de 3 parcelas pagas</span><span style="font-size: 14px; color: #454745;">R$ 366,67 recebidos</span></div>
+        <div style="display: flex; gap: 4px; height: 10px;"><div style="flex: 1; border-radius: 5px; background: #163300;"></div><div style="flex: 1; border-radius: 5px; background: #C5EDAB;"></div><div style="flex: 1; border-radius: 5px; background: #E8EBE6;"></div></div>
+      </div>
+    </div>
+
+    <!-- Próximo vencimento: cartão invertido -->
+    <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; background: #0E0F0C; color: #9FE870; border-radius: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 14px; color: #E8EBE6;">Próximo vencimento</div><div style="font-size: 16px; font-weight: 600; color: #FFFFFF; white-space: nowrap;">11/10/2026</div><div style="font-size: 14px; color: #868685; white-space: nowrap;">2ª parcela · em 30 dias</div></div>
+        <div style="display: flex; align-items: baseline; gap: 4px;"><span style="font-size: 14px; font-weight: 600; color: #868685;">R$</span><span style="font-weight: 900; font-size: 40px; line-height: 0.85; letter-spacing: -0.01em;">366</span><span style="font-size: 16px; font-weight: 600; color: #E8EBE6;">,67</span></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+        <button style="height: 44px; background: transparent; color: #FFFFFF; border: 1px solid #E8EBE6; border-radius: 22px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Cobrar</button>
+        <button style="height: 44px; background: transparent; color: #FFFFFF; border: 1px solid #E8EBE6; border-radius: 22px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Renegociar</button>
+        <button style="height: 44px; background: #9FE870; color: #0E0F0C; border: none; border-radius: 22px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer;">Pagar</button>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; background: #FFFFFF; border-radius: 24px; overflow: hidden;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px 12px 20px;"><div style="font-weight: 600; font-size: 20px; letter-spacing: -0.02em;">Parcelas</div><div style="font-size: 14px; color: #868685;">3x R$ 366,67</div></div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid #E8EBE6;">
+        <div style="font-size: 14px; font-weight: 600; width: 24px; color: #868685;">1ª</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 14px; color: #454745;">11/09/2026</div><div style="font-size: 12px; color: #868685;">recebida hoje via Pix</div></div>
+        <div style="font-size: 14px; font-weight: 600; color: #868685; text-decoration: line-through;">R$ 366,67</div>
+        <span style="display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px; border-radius: 999px; background: #E2F6D5; color: #054D28; font-size: 12px; font-weight: 600;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"></path></svg>Pago</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid #E8EBE6;">
+        <div style="font-size: 14px; font-weight: 600; width: 24px;">2ª</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 14px;">11/10/2026</div><div style="font-size: 12px; color: #868685;">em 30 dias</div></div>
+        <div style="font-size: 14px; font-weight: 600;">R$ 366,67</div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-top: 1px solid #E8EBE6;">
+        <div style="font-size: 14px; font-weight: 600; width: 24px;">3ª</div>
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 14px;">11/11/2026</div><div style="font-size: 12px; color: #868685;">em 61 dias</div></div>
+        <div style="font-size: 14px; font-weight: 600;">R$ 366,67</div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 10px; padding: 12px 16px 32px 16px; background: #E8EBE6;">
+    <button style="height: 48px; padding: 0 24px; background: #FFFFFF; color: #0E0F0C; border: 1px solid #0E0F0C; border-radius: 24px; font-family: inherit; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">PDF</button>
+    <button style="flex-grow: 1; height: 48px; background: #9FE870; color: #0E0F0C; border: none; border-radius: 24px; font-family: inherit; font-size: 16px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4z"></path></svg>Enviar no WhatsApp</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

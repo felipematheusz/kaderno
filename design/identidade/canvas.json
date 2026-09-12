@@ -1,0 +1,47 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Identidade visual",
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 3140
+    },
+    {
+      "file": "Inicio.dc.html",
+      "title": "Início · desktop",
+      "x": 1300,
+      "y": 0,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Contrato.dc.html",
+      "title": "Detalhe do contrato · mobile",
+      "x": 1300,
+      "y": 1060,
+      "w": 390,
+      "h": 920
+    }
+  ],
+  "annotations": [
+    {
+      "id": "escolha",
+      "x": 1300,
+      "y": -220,
+      "w": 480,
+      "text": "Identidade final, seguindo o DESIGN.md da Wise token por token: sálvia #E8EBE6 no fundo, cartões brancos de 24px sem borda nem sombra, verde #9FE870 só na ação principal (texto tinta em cima), cartão invertido preto com verde para o destaque, cartão com contorno preto para onde se digita.\n\nTipografia só Geist (substituta oficial listada no DESIGN.md): 900 no destaque, 600 no resto, números tabulares. Sem fonte mono, sem caixa alta.\n\nSelos: positivo verde-pálido/verde-profundo, alerta amarelo, negativo vinho com texto branco. As opções anteriores ficaram em design/identidade/anterior-*."
+    },
+    {
+      "id": "nome-provisorio",
+      "x": 1820,
+      "y": -220,
+      "w": 260,
+      "text": "\"Caderno\" continua como nome provisório. Troque pelo definitivo no wordmark e no menu."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #F4EFE7; color: #181512; font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #2C4F94; } a:hover { color: #1E3A73; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 1200px; min-height: 1900px; background: #F4EFE7; padding: 64px 72px 72px 72px; display: flex; flex-direction: column; gap: 56px;">
+
+  <!-- Cabeçalho -->
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; padding-bottom: 32px; border-bottom: 1px solid #181512;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="42" height="42" rx="3" stroke="#181512" stroke-width="2"></rect><path d="M9 14h26M9 22h26M9 30h18" stroke="#181512" stroke-width="2" stroke-linecap="round"></path><path d="M14 4v36" stroke="#A83630" stroke-width="1.5"></path></svg>
+        <div style="font-family: 'Instrument Serif', Georgia, 'Times New Roman', serif; font-size: 64px; line-height: 1; letter-spacing: -0.01em;">Caderno</div>
+      </div>
+      <div style="font-size: 18px; color: #5A544E; line-height: 1.4; max-width: 520px; text-wrap: pretty;">Controle de empréstimos e vendas parceladas. O caderninho de quem empresta, sem parecer banco.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px; max-width: 360px; font-size: 14px; line-height: 1.5; color: #5A544E;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #867F77;">Conceito</div>
+      <div style="text-wrap: pretty;">Papel, tinta e régua. Listas separadas por linhas em vez de cartões flutuantes, números em destaque, uma única cor de ação. Verde, âmbar e vermelho só dizem situação: pago, vence hoje, atrasado.</div>
+    </div>
+  </div>
+
+  <!-- Paleta -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Paleta</div>
+      <div style="font-size: 14px; color: #867F77;">Tons quentes de papel e tinta. Azul-caneta para tudo que é clicável.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #F4EFE7; border: 1px solid #D7D0C6; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Papel</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#F4EFE7 · fundo</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #FAF6F1; border: 1px solid #D7D0C6; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Papel claro</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#FAF6F1 · campos</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #ECE5DB; border: 1px solid #D7D0C6; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Papel escuro</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#ECE5DB · seleção</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #D7D0C6; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Régua</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#D7D0C6 · linhas</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #ABA397; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Régua forte</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#ABA397 · bordas</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #181512; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Tinta</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#181512 · texto, botão</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #5A544E; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Tinta 2</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#5A544E · apoio</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #867F77; border-radius: 3px;"></div><div style="font-size: 13px; font-weight: 500;">Tinta 3</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#867F77 · rótulos</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #2C4F94; border-radius: 3px; display: flex; align-items: flex-end; padding: 8px;"><div style="width: 40px; height: 16px; background: #DDE8FD; border-radius: 2px;"></div></div><div style="font-size: 13px; font-weight: 500;">Azul-caneta</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#2C4F94 · ação, link</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #236E44; border-radius: 3px; display: flex; align-items: flex-end; padding: 8px;"><div style="width: 40px; height: 16px; background: #D4F0DC; border-radius: 2px;"></div></div><div style="font-size: 13px; font-weight: 500;">Verde</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#236E44 · pago, em dia</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #9D6300; border-radius: 3px; display: flex; align-items: flex-end; padding: 8px;"><div style="width: 40px; height: 16px; background: #FDE8C6; border-radius: 2px;"></div></div><div style="font-size: 13px; font-weight: 500;">Âmbar</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#9D6300 · vence hoje</div></div>
+      <div style="display: flex; flex-direction: column; gap: 8px;"><div style="height: 72px; background: #A83630; border-radius: 3px; display: flex; align-items: flex-end; padding: 8px;"><div style="width: 40px; height: 16px; background: #FFE3DF; border-radius: 2px;"></div></div><div style="font-size: 13px; font-weight: 500;">Vermelho</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#A83630 · atrasado</div></div>
+    </div>
+  </div>
+
+  <!-- Tipografia -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Tipografia</div>
+      <div style="font-size: 14px; color: #867F77;">Três famílias, cada uma com um papel.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #867F77;">Instrument Serif</div>
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 44px; line-height: 1.05;">Bom dia, Felipe.<br><em>Tudo em dia.</em></div>
+        <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Títulos de tela, saudação e valores em destaque. Itálico para o que é humano ou opinativo.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #867F77;">IBM Plex Sans</div>
+        <div style="font-size: 20px; line-height: 1.35;"><span style="font-weight: 600;">Juliana Prado</span><br><span style="font-weight: 500;">Cobrar parcela</span><br><span style="font-weight: 400; color: #5A544E;">3 de 6 parcelas pagas</span></div>
+        <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Toda a interface: nomes, rótulos, botões, texto corrido. Pesos 400, 500 e 600.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #867F77;">IBM Plex Mono</div>
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 20px; line-height: 1.35; font-variant-numeric: tabular-nums;">R$ 1.100,00<br>11/10/2026<br>#0042 · 1/3</div>
+        <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Valores, datas e números de contrato em listas. Alinha na coluna como numa planilha.</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 32px; align-items: baseline; padding: 20px 24px; border-top: 1px solid #D7D0C6; border-bottom: 1px solid #D7D0C6; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 40px; color: #181512; line-height: 1;">Aa</div><div>Serif 40 · destaque</div></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 28px; color: #181512; line-height: 1;">Aa</div><div>Serif 28 · título</div></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 17px; font-weight: 600; color: #181512; line-height: 1;">Aa</div><div>Sans 17/600 · nome</div></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; color: #181512; line-height: 1;">Aa</div><div>Sans 15 · corpo</div></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; color: #181512; line-height: 1;">Aa</div><div>Sans 13 · apoio</div></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #181512; line-height: 1;">Aa</div><div>Mono 11 caps · rótulo</div></div>
+    </div>
+  </div>
+
+  <!-- Dinheiro e situação -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Dinheiro</div>
+        <div style="font-size: 14px; color: #867F77;">O número manda na hierarquia.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 4px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #867F77;">A receber</div>
+        <div style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 20px; color: #867F77;">R$</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 52px; line-height: 1; letter-spacing: -0.01em;">6.020</span><span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 26px; color: #5A544E;">,00</span></div>
+        <div style="margin-top: 16px; display: flex; flex-direction: column; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-variant-numeric: tabular-nums;">
+          <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #D7D0C6;"><span style="color: #5A544E;">Emprestado</span><span>R$ 12.400,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #D7D0C6;"><span style="color: #5A544E;">Juros previstos</span><span>R$    800,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #D7D0C6;"><span style="color: #5A544E;">Recebido</span><span style="color: #236E44;">– R$  7.180,00</span></div>
+          <div style="display: flex; justify-content: space-between; padding: 10px 0 0 0; border-top: 3px double #181512; margin-top: -1px; font-weight: 500;"><span>A receber</span><span>R$  6.020,00</span></div>
+        </div>
+      </div>
+      <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Destaque em serifa com o “R$” menor e apagado. Em tabelas, mono tabular alinhado à direita. Total fecha com linha dupla, como no caderno de contas.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Situação</div>
+        <div style="font-size: 14px; color: #867F77;">Carimbos, não pílulas coloridas.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #236E44; color: #236E44; background: #D4F0DC; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Em dia</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #236E44; color: #236E44; background: #D4F0DC; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Pago</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #9D6300; color: #9D6300; background: #FDE8C6; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Vence hoje</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #A83630; color: #A83630; background: #FFE3DF; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Atrasado · 4 dias</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #ABA397; color: #5A544E; background: transparent; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">A vencer</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #181512; color: #181512; background: transparent; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Quitado</span>
+          <span style="display: inline-flex; align-items: center; height: 24px; padding: 0 8px; border: 1px solid #2C4F94; color: #2C4F94; background: #DDE8FD; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;">Renegociada</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1px solid #D7D0C6; border-radius: 3px; background: #F4EFE7;">
+          <div style="display: flex; flex-direction: column; gap: 2px;"><div style="font-size: 15px; font-weight: 500;">1ª parcela</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #5A544E;">11/09/2026 · R$ 366,67</div></div>
+          <div style="transform: rotate(-8deg); display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border: 2px solid #236E44; color: #236E44; border-radius: 3px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.9;">Pago</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 6px; flex-grow: 1;"><div style="display: flex; justify-content: space-between; font-size: 13px;"><span style="font-weight: 500;">3 de 6 parcelas pagas</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #5A544E;">50%</span></div><div style="height: 6px; background: #D7D0C6;"><div style="height: 6px; width: 50%; background: #181512;"></div></div></div>
+        </div>
+      </div>
+      <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Rótulo mono em caixa alta com borda fina. Parcela paga ganha o carimbo inclinado. Barra de progresso reta, sem cantos redondos.</div>
+    </div>
+  </div>
+
+  <!-- Botões e campos -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Botões</div>
+        <div style="font-size: 14px; color: #867F77;">Tinta para a ação principal. Uma por tela.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+          <button style="height: 44px; padding: 0 20px; background: #181512; color: #F4EFE7; border: 1px solid #181512; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Novo contrato</button>
+          <button style="height: 44px; padding: 0 20px; background: transparent; color: #181512; border: 1px solid #181512; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">Gerar PDF</button>
+          <button style="height: 44px; padding: 0 12px; background: transparent; color: #2C4F94; border: none; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px;">Ver histórico</button>
+          <button style="height: 44px; padding: 0 20px; background: transparent; color: #A83630; border: 1px solid #A83630; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 15px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">Excluir</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button style="height: 36px; padding: 0 14px; background: transparent; color: #181512; border: 1px solid #ABA397; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;">Cobrar</button>
+          <button style="height: 36px; padding: 0 14px; background: transparent; color: #181512; border: 1px solid #ABA397; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;">Renegociar</button>
+          <button style="height: 36px; padding: 0 14px; background: #181512; color: #F4EFE7; border: 1px solid #181512; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;">Pagar</button>
+          <div style="font-size: 13px; color: #867F77; margin-left: 8px;">ações de parcela · 36px</div>
+        </div>
+        <div style="display: flex; gap: 0; border: 1px solid #181512; border-radius: 3px; overflow: hidden; width: fit-content;">
+          <div style="height: 40px; padding: 0 16px; display: flex; align-items: center; font-size: 14px; font-weight: 500; color: #181512; border-right: 1px solid #181512;">Diária</div>
+          <div style="height: 40px; padding: 0 16px; display: flex; align-items: center; font-size: 14px; font-weight: 500; color: #181512; border-right: 1px solid #181512;">Semanal</div>
+          <div style="height: 40px; padding: 0 16px; display: flex; align-items: center; font-size: 14px; font-weight: 500; color: #181512; border-right: 1px solid #181512;">Quinzenal</div>
+          <div style="height: 40px; padding: 0 16px; display: flex; align-items: center; font-size: 14px; font-weight: 500; color: #F4EFE7; background: #181512;">Mensal</div>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Campos</div>
+        <div style="font-size: 14px; color: #867F77;">Papel claro, borda fina, 44px de altura.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1;">
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #5A544E;">Cliente</div><div style="height: 44px; border: 1px solid #ABA397; background: #FAF6F1; border-radius: 3px; padding: 0 12px; display: flex; align-items: center; gap: 10px; color: #867F77; font-size: 15px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg>Buscar por nome ou CPF</div></div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #5A544E;">Valor emprestado</div><div style="height: 52px; border: 1px solid #181512; background: #FAF6F1; border-radius: 3px; padding: 0 12px; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 0 3px #DDE8FD;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #867F77;">R$</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; font-weight: 500;">1.000,00</span></div></div>
+          <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #5A544E;">Taxa ao mês</div><div style="height: 52px; border: 1px solid #ABA397; background: #FAF6F1; border-radius: 3px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 22px; font-weight: 500;">10</span><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 14px; color: #867F77;">%</span></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 13px; font-weight: 500; color: #5A544E;">Primeira parcela</div><div style="height: 44px; border: 1px solid #A83630; background: #FAF6F1; border-radius: 3px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px;"><span>30/02/2026</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5A544E" stroke-width="1.75" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></div><div style="font-size: 13px; color: #A83630;">Essa data não existe. Confira o dia e o mês.</div></div>
+        <div style="font-size: 13px; color: #5A544E; line-height: 1.5;">Foco: borda tinta com halo azul. Erro: borda vermelha e frase curta explicando o que fazer. Dinheiro sempre em mono e maior que o resto.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linhas de lista -->
+  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; gap: 16px;">
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Listas</div>
+      <div style="font-size: 14px; color: #867F77;">Régua, não cartão. Linhas de 1px separam, nada flutua com sombra.</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+      <div style="display: flex; flex-direction: column; border-top: 1px solid #181512;">
+        <div style="display: flex; align-items: center; gap: 16px; padding: 16px 4px; border-bottom: 1px solid #D7D0C6;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #ECE5DB; border: 1px solid #D7D0C6; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', Georgia, serif; font-size: 20px;">M</div>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 16px; font-weight: 600;">Marcos Andrade</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #5A544E;">#0042 · 3x · vence 11/10</div></div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; font-weight: 500;">R$ 1.100,00</div><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 6px; border: 1px solid #236E44; color: #236E44; background: #D4F0DC; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;">Em dia</span></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#867F77" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding: 16px 4px; border-bottom: 1px solid #D7D0C6;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: #ECE5DB; border: 1px solid #D7D0C6; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', Georgia, serif; font-size: 20px;">A</div>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 16px; font-weight: 600;">Antônio Ferreira</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #5A544E;">#0039 · 4x · venceu 07/09</div></div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;"><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 16px; font-weight: 500;">R$ 880,00</div><span style="display: inline-flex; align-items: center; height: 22px; padding: 0 6px; border: 1px solid #A83630; color: #A83630; background: #FFE3DF; border-radius: 2px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;">Atrasado</span></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#867F77" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg>
+        </div>
+        <div style="font-size: 13px; color: #867F77; padding-top: 12px;">Linha de contrato: inicial em serifa, nome, metadados em mono, valor à direita.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid #181512;">
+        <div style="display: flex; align-items: center; gap: 16px; padding: 14px 4px; border-bottom: 1px solid #D7D0C6;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #5A544E; width: 88px;">11/09/2026</div>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 15px; font-weight: 500;">Juliana Prado</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #867F77;">#0041 · parcela 3/6</div></div>
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500;">R$ 440,00</div>
+          <div style="display: flex; gap: 6px;"><button style="height: 36px; padding: 0 12px; background: transparent; color: #181512; border: 1px solid #ABA397; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 36px; padding: 0 12px; background: #181512; color: #F4EFE7; border: 1px solid #181512; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Pagar</button></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px; padding: 14px 4px; border-bottom: 1px solid #D7D0C6; background: #FFE3DF;">
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #A83630; width: 88px;">07/09/2026</div>
+          <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;"><div style="font-size: 15px; font-weight: 500;">Antônio Ferreira</div><div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; color: #A83630;">#0039 · parcela 2/4 · 4 dias</div></div>
+          <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 15px; font-weight: 500;">R$ 220,00</div>
+          <div style="display: flex; gap: 6px;"><button style="height: 36px; padding: 0 12px; background: transparent; color: #181512; border: 1px solid #ABA397; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Cobrar</button><button style="height: 36px; padding: 0 12px; background: #181512; color: #F4EFE7; border: 1px solid #181512; border-radius: 3px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer;">Pagar</button></div>
+        </div>
+        <div style="font-size: 13px; color: #867F77; padding-top: 12px;">Linha de parcela: data em mono à esquerda, ações à direita. Atraso tinge a linha inteira de vermelho claro.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ícones e princípios -->
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Ícones</div>
+        <div style="font-size: 14px; color: #867F77;">Traço 1,75px, cantos redondos, 20px na interface.</div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; padding: 24px; border: 1px solid #D7D0C6; border-radius: 3px; background: #FAF6F1; color: #181512;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7"></path><path d="M17.5 13.5a6.5 6.5 0 0 1 4 6.5"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l5 5v13H6z"></path><path d="M14 3v5h5"></path><path d="M9 13h7M9 17h7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14v18l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21z"></path><path d="M9 8h6M9 12h6"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"></path><path d="M10 21h4"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l18 18"></path><path d="M10.5 6.2A10 10 0 0 1 12 6c5 0 9 6 9 6a17 17 0 0 1-3.2 3.5M6.6 6.6A17 17 0 0 0 3 12s4 6 9 6a9 9 0 0 0 3.4-.7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M20 20l-4.3-4.3"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 5l-7 7 7 7"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4z"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 6"></path></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18H6z"></path><path d="M9 7h6M9 11h6M9 15h3"></path></svg>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; align-items: baseline; gap: 16px;">
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; line-height: 1;">Regras da casa</div>
+      </div>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid #181512;">
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #D7D0C6; font-size: 15px; line-height: 1.45;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #867F77; font-size: 13px; padding-top: 3px;">01</span><span><strong style="font-weight: 600;">Régua, não cartão.</strong> Listas se separam por linhas. Cartão só para a folha de comprovante.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #D7D0C6; font-size: 15px; line-height: 1.45;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #867F77; font-size: 13px; padding-top: 3px;">02</span><span><strong style="font-weight: 600;">O número fala primeiro.</strong> Valor maior que o nome; nome maior que o resto.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #D7D0C6; font-size: 15px; line-height: 1.45;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #867F77; font-size: 13px; padding-top: 3px;">03</span><span><strong style="font-weight: 600;">Uma cor de ação.</strong> Azul-caneta em links e foco. Verde é pago ou dinheiro que entrou, âmbar é vence hoje, vermelho é atraso. Nunca em botão, exceto Excluir, sempre com confirmação.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #D7D0C6; font-size: 15px; line-height: 1.45;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #867F77; font-size: 13px; padding-top: 3px;">04</span><span><strong style="font-weight: 600;">Cantos de 3px, sem gradiente, sem sombra.</strong> Profundidade vem de papel claro sobre papel, não de blur.</span></div>
+        <div style="display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid #D7D0C6; font-size: 15px; line-height: 1.45;"><span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #867F77; font-size: 13px; padding-top: 3px;">05</span><span><strong style="font-weight: 600;">Escreve como gente.</strong> “Vence hoje”, “4 dias atrasado”, “Tudo em dia”. Nada de “status: pending”.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

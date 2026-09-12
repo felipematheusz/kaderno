@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FFFFFF; color: #171717; font-family: 'Geist', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #171717; } a:hover { color: #4D4D4D; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+<div style="width: 640px; min-height: 620px; background: #FFFFFF; padding: 40px; display: flex; flex-direction: column; gap: 28px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="12" fill="#171717"></rect><rect x="12" y="14" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="22" width="24" height="4" rx="2" fill="#FFFFFF"></rect><rect x="12" y="30" width="14" height="4" rx="2" fill="#FFFFFF"></rect></svg>
+    <div style="font-weight: 700; font-size: 26px; letter-spacing: -0.03em; line-height: 1;">Caderno</div>
+    <div style="margin-left: auto; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888888;">Opções de estilo</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-weight: 600; font-size: 30px; letter-spacing: -0.04em; line-height: 1.05;">Oito estilos, uma estrutura.</div>
+    <div style="font-size: 15px; line-height: 1.5; color: #4D4D4D; text-wrap: pretty;">Cada prancha mostra o mesmo Início e os mesmos componentes; só o estilo muda. Assim dá para comparar cor, tipografia e forma sem se distrair com conteúdo.</div>
+  </div>
+  <div style="display: flex; flex-direction: column; border-top: 1px solid #EBEBEB;">
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #6D4BE0; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">B</span><span style="font-weight: 600; width: 150px;">Violeta</span><span style="color: #4D4D4D;">Sora + Geist · painéis com borda fina</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #1D1D1F; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">D</span><span style="font-weight: 600; width: 150px;">Precisão (Apple)</span><span style="color: #4D4D4D;">Figtree · pílula preta, azul só em link</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #F25C3B; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">E</span><span style="font-weight: 600; width: 150px;">Coral</span><span style="color: #4D4D4D;">Bricolage Grotesque · quente, cantos grandes</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #533AFD; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">F</span><span style="font-weight: 600; width: 150px;">Stripe</span><span style="color: #4D4D4D;">Hanken Grotesk 300 · índigo em pílula</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #171717; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">G</span><span style="font-weight: 600; width: 150px;">Vercel</span><span style="color: #4D4D4D;">Geist · preto e branco, pílula preta</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #FFE8D4; border: 1px solid #E5E3DF; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">H</span><span style="font-weight: 600; width: 150px;">Notion</span><span style="color: #4D4D4D;">Newsreader (serifa) · pastel, carvão</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #9FE870; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">I</span><span style="font-weight: 600; width: 150px;">Wise</span><span style="color: #4D4D4D;">Onest 900 · sálvia, limão, cantos de 24px</span></div>
+    <div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #EBEBEB; font-size: 14px;"><span style="width: 12px; height: 12px; border-radius: 4px; background: #5E6AD2; flex-shrink: 0;"></span><span style="font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #888888; width: 20px;">J</span><span style="font-weight: 600; width: 150px;">Linear (clara)</span><span style="color: #4D4D4D;">Geist · lavanda, chips retos, denso</span></div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px 18px; background: #FAFAFA; border-radius: 8px; font-size: 13px; line-height: 1.5; color: #4D4D4D;">
+    <div style="font-weight: 600; color: #171717;">Componentes iguais em todas</div>
+    <div>Balanço em barra proporcional, parcelas como segmentos, avatar com anel de score, prévia da mensagem de cobrança e campo de valor que mostra o cálculo na hora.</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
